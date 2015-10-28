@@ -113,12 +113,24 @@
 
 - The lowest total amount of prison time somes from both parties cooperating, /but/ there's always the risk that the other person might not be as kind of you. 
 - This becomes more interesting if we play the game once, then immediately play it again. Each player will now have a knowledge of how the other person behaved last time, and this will influence their decision making process. 
-- If we assign points (based on minimizing time in jail), we can develop different game strategies to minimize the time the human player stays in jail. 
+- If we assign points (based on minimizing time in jail), we can develop different game strategies to minimize the time the human player stays in jail over multiple games. 
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- The same idea can be seen in different places in human society. 
+- Imagine a pair of competing fizzy drinks manufacturers. They both have two options when considering the sales of their products:
+    - *Option 1:* Don't spend money on advertising. People know your product already, and are currently buying it at a steady rate. 
+    - *Option 2:* Spend money on advertising. It'll cost money, but sales will increase.
+- If both companies cooperate (option 1), they'll both enjoy steady profits and won't have to spend thousands of pounds on advertising.
+- If one advertises and the other doesn't, one company will see their sales increase as the other company's sales (and profits) drop. 
+- If both companies advertise, the effects of them both advertising will cancel each other out, and both companies will see their overall profits drop because of the money they're spending on advertising. 
+- In real life, competing companies tend to advertise aggressively. 
 ** Code It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: code
 :END:
-- In a new browser tab, open: https://scratch.mit.edu/projects/84082932/#editor
+- In a new browser tab, open [[https://scratch.mit.edu/projects/84082932/#editor][this link]] to see a prisoner's dilemma simulator
 - If you've a Scratch account, you can sign in to save the work you'll do here.
 - If you've not got one, you can always click 'File -> Download to your computer' when you're finished to ensure your work is saved.
 - Unfortunately, it looks like the developer didn't have time to finish the code, and there are some blanks. 
