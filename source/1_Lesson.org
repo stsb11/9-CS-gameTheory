@@ -5,13 +5,13 @@
 #+HTML_HEAD_EXTRA: <script src="js/navbar.js" type="text/javascript"></script>
 #+OPTIONS: f:nil author:nil num:nil creator:nil timestamp:nil toc:nil html-style:nil
 
-#+TITLE: The Prisoner's Dilemma
-#+AUTHOR: Stephen Brown
+#+TITLE: Game Theory
+#+AUTHOR: Paul Dougall
 
 #+BEGIN_HTML
   <div class="github-fork-ribbon-wrapper left">
     <div class="github-fork-ribbon">
-      <a href="https://github.com/stsb11/9-CS-gameTheory">Fork me on GitHub</a>
+      <a href="https://github.com/stsb11/7-CS-gameTheory">Fork me on GitHub</a>
     </div>
   </div>
 <div id="stickyribbon">
@@ -19,6 +19,7 @@
       <li><a href="1_Lesson.html">Week1</a></li>
       <li><a href="2_Lesson.html">Week2</a></li>
       <li><a href="3_Lesson.html">Week3</a></li>
+      <li><a href="4_Lesson.html">Week4</a></li>
       <li><a href="assessment.html">Assessment</a></li>
     </ul>
   </div>
@@ -87,7 +88,7 @@
 :HTML_CONTAINER_CLASS: save
 :END:
 
-* Introduction
+* Missile Command
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: activity
 :END:
@@ -95,56 +96,82 @@
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: learn
 :END:
-- Game theory is the study of how and why people make decisions.
-- It is used extensively in the study of economics, and can often show surprising insights into how people behave. 
-- We'll look at some of these in this unit, and code some different games along the way in both Scratch and Python. 
+- Game theory has a lot of uses; it's not just for playing games. Today we're going to use it to create and play a game. 
+- We are going to learn about a concept called *backward induction* to solve *[[https://en.wikipedia.org/wiki/Zero-sum_game][zero-sum games]]*.
+- Backward induction is the process of reasoning backwards in time, from the end of a problem or situation, to determine a sequence of optimal actions. It proceeds by first considering the last time a decision might be made and choosing what to do in any situation at that time. Using this information, one can then determine what to do at the second-to-last time of decision. This process continues backwards until one has determined the best action for every possible situation (i.e. for every possible information set) at every point in time.
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+[[file:img/jvn.gif]]
+- /(Picture courtesy of Wikipedia)/
+- A lot of these types of games were used by John von Neumann. Conduct some research online to see why von Neuman is important in the field of Computer Science as well as in Game Theory. 
 ** Try It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: try
 :END:
-- The Prisoner's Dilemma is probably the most popular example of game theory in action. It demonstrates that people don't always act in their own best interests. 
-- Imagine that two people have been arrested for a crime, and the police are uncertain which person committed the crime and which person helped carry it out. 
-- Each prisoner is put into a different room and given a choice: 
-     - Remain silent
-     - Betray your parter
-- If both stay silent, they will both be sent to prison for *1 year*.
-- If they both betray one another, they can both be sent away for *3 years*.
-- If one betrays the other, the betrayer goes *free*, and the other is imprisoned for *5 years*.
+- "Nim" is an ancient two-player game played with sticks or stones. The objects are divided into piles. 
+- The players alternate turns. 
+- On each player's turn they may remove any number of sticks from one of the piles, up to the number of sticks remaining in that pile; but they can only take from a single pile on a given turn. 
+- The goal is to take the last stick, making you the winner. 
+- The strategy element is to make the other person clear out all but one pile, so you can take all the sticks in that last pile.
 
-- The lowest total amount of prison time somes from both parties cooperating, /but/ there's always the risk that the other person might not be as kind of you. 
-- This becomes more interesting if we play the game once, then immediately play it again. Each player will now have a knowledge of how the other person behaved last time, and this will influence their decision making process. 
-- If we assign points (based on minimizing time in jail), we can develop different game strategies to minimize the time the human player stays in jail over multiple games. 
-** Learn It
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: learn
-:END:
-- The same idea can be seen in different places in human society. 
-- Imagine a pair of competing fizzy drinks manufacturers. They both have two options when considering the sales of their products:
-    - *Option 1:* Don't spend money on advertising. People know your product already, and are currently buying it at a steady rate. 
-    - *Option 2:* Spend money on advertising. It'll cost money, but sales will increase.
-- If both companies cooperate (option 1), they'll both enjoy steady profits and won't have to spend thousands of pounds on advertising.
-- If one advertises and the other doesn't, one company will see their sales increase as the other company's sales (and profits) drop. 
-- If both companies advertise, the effects of them both advertising will cancel each other out, and both companies will see their overall profits drop because of the money they're spending on advertising. 
-- In real life, competing companies tend to advertise aggressively. 
+
+- To illustrate the basic theoretical idea behind the Nim strategy, let's first look at a simpler version of the game called "21". 
+- Imagine there are 21 sticks in a pile. 
+- The rules are: You can take one, two, or three sticks on your turn.
+- Whoever takes the last stick on their turn wins.
+- Try it [[https://scratch.mit.edu/projects/23781653/][here]] as both a one and two player game a few times.
+- What is the winning strategy? 
 ** Code It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: code
 :END:
-- In a new browser tab, open [[https://scratch.mit.edu/projects/84082932/#editor][this link]] to see a prisoner's dilemma simulator
-- If you've a Scratch account, you can sign in to save the work you'll do here.
-- If you've not got one, you can always click 'File -> Download to your computer' when you're finished to ensure your work is saved.
-- Unfortunately, it looks like the developer didn't have time to finish the code, and there are some blanks. 
-- Based on the rules set out above, can you complete the code and make the game work?
+- We start with our plan. This is written in pseudocode to help work out the sequence of instructions we'll need to code before we start.
+[[file:img/screenshot1.PNG]]
+- Go to the Scratch website and create a new project called "NIM 21"
+- Make the following blocks.
+
+- *Set player to 1*
+[[file:img/screenshot2.PNG]]
+#Set the initial state
+-make another variable called state and set to 21. We also need to let the user know what is the initial state, we can play with this number later to add to the game, and make a while loop to keep the game going.
+
+
+- *Set a valid move*
+[[file:img/screenshot3.PNG]]
+- What is a valid move? The player can pick either 1,2 or 3. 
+- As there is more that one thing to remember here a variable is not the data structure we are looking for... 
+- What is? A list of course! Make a list called 'validMove' and add 1,2 and 3 as elements.
+- Can a player always pick 1-3? Not always. If we are approaching the end of the game there may be only 1 or two left. We'll need to add some code to check whether there are enough sticks left.
+[[file:img/screenshot4.PNG]]
+
+
+- Grab the following blocks and combine in such a way to set the state to be the number of sticks (state) minus the next go (answer). The let the player know.
+[[file:img/screenshot5.PNG]]
+
+- *Check if someone's won:* 
+- The game ends when someone wins. We need to check using a conditional (IF statement) whether the state is one and if so let them know and break out of the loop.
+[[file:img/screenshot6.PNG]]
+
+- *Switch which player's turn it is:*
+[[file:img/screenshot7.PNG]]
+
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- By using the rules, we can write an AI that always wins. In game theory, a "no-win" situation is one in which no player benefits from any outcome. This may be because of any or all of the following:
+    -Unavoidable or unforeseeable circumstances causing the situation to change after decisions have been made. This is common in Text adventures
+    - Zugzwang, as in chess, when any move a player chooses makes him worse off than before but the rules of chess means they have to move
+    - A situation in which the player has to accomplish two mutually dependent tasks each of which must be completed before the other or that are mutually exclusive (a Catch-22)
+    - Ignorance of other players' actions, meaning the best decision for all differs from that for any one player (as in the Prisoner's Dilemma).
 ** Badge It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
 :END:
-*** Silver
-- Complete the code for the game.
-*** Gold
-- Modify the cat's strategy to be an 'angel'. It always stays silent, and never betrays the human player. 
-- Develop a new 'Unpredictable puss' strategy for the cat, so that it betrays or stays silent at random. 
-*** Platinum
-- Modify the cat's strategy so that it holds a grudge...
-- It will remain silent every time the game is played, until the human player betrays, then...
-- It will then always betray the human player until the game is reset.
+
+- *Silver:* Write a set of rules for someone who has never played '21' before so that they will always win.
+- *Gold:* Write a working two-player game of 21 in Scratch. Upload a screenshot of your code AND the *.sb2* file to the upload points. 
+- *Platinum:* Look at the below code. Why does it not work? Add and fix for the Platinum Badge.
+[[file:img/screenshot8.PNG]]
