@@ -103,6 +103,11 @@
 :HTML_CONTAINER_CLASS: try
 :END:
 - The Prisoner's Dilemma is probably the most popular example of game theory in action. It demonstrates that people don't always act in their own best interests. 
+
+#+BEGIN_HTML
+<iframe width="560" height="315" src="https://www.youtube.com/embed/t9Lo2fgxWHw" frameborder="0" allowfullscreen></iframe>
+#+END_HTML
+
 - Imagine that two people have been arrested for a crime, and the police are uncertain which person committed the crime and which person helped carry it out. 
 - Each prisoner is put into a different room and given a choice: 
      - Remain silent
