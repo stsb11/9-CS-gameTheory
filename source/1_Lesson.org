@@ -99,6 +99,10 @@
 - Game theory has a lot of uses; it's not just for playing games. Today we're going to use it to create and play a game. 
 - We are going to learn about a concept called *backward induction* to solve *[[https://en.wikipedia.org/wiki/Zero-sum_game][zero-sum games]]*.
 - Backward induction is the process of reasoning backwards in time, from the end of a problem or situation, to determine a sequence of optimal actions. It proceeds by first considering the last time a decision might be made and choosing what to do in any situation at that time. Using this information, one can then determine what to do at the second-to-last time of decision. This process continues backwards until one has determined the best action for every possible situation (i.e. for every possible information set) at every point in time.
+- To start you off, consider this puzle...
+#+BEGIN_HTML
+<iframe width="560" height="315" src="https://www.youtube.com/embed/N5vJSNXPEwA" frameborder="0" allowfullscreen></iframe>
+#+END_HTML
 ** Research It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: research
