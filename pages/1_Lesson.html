@@ -91,9 +91,13 @@ for the JavaScript code in this tag.
 <li>To start you off, consider this puzle&#x2026;
 </li>
 </ul>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/N5vJSNXPEwA" frameborder="0" allowfullscreen></iframe>
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/N5vJSNXPEwA" frameborder="0" allowfullscreen>
+</iframe>
 </div>
 </div>
+
 <div id="outline-container-sec-1-2" class="outline-3 research">
 <h3 id="sec-1-2">Research It</h3>
 <div class="outline-text-3" id="text-1-2">
@@ -136,108 +140,201 @@ for the JavaScript code in this tag.
 </li>
 <li>Whoever takes the last stick on their turn wins.
 </li>
-<li>Try it <a href="https://scratch.mit.edu/projects/23781653/">here</a> as both a one and two player game a few times.
+<li>Have a few goes here against the computer (click the green flag to restart):
 </li>
-<li>What is the winning strategy? 
+</ul>
+<iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/86810467/?autostart=true" frameborder="0" allowfullscreen>
+</iframe>
+
+<ul class="org-ul">
+<li>If the computer goes first, it will always win. 
+</li>
+<li>Can you find the winning strategy? 
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-1-4" class="outline-3 code">
-<h3 id="sec-1-4">Code It</h3>
+<div id="outline-container-sec-1-4" class="outline-3 design">
+<h3 id="sec-1-4">Design It</h3>
 <div class="outline-text-3" id="text-1-4">
 <ul class="org-ul">
-<li>We start with our plan. This is written in pseudocode to help work out the sequence of instructions we'll need to code before we start.
+<li>You're going to make your own version of Nim for two human players. 
 </li>
-</ul>
-
-<div class="figure">
-<p><img src="img/screenshot1.PNG" alt="screenshot1.PNG" />
-</p>
-</div>
+<li>We start with a high-level plan; this is written in pseudocode to help work out the sequence of instructions we'll need to code before we start.
 <ul class="org-ul">
-<li>Go to the Scratch website and create a new project called "NIM 21"
+<li>Store the number of <b>sticks</b> and which <b>player</b>'s turn it is.
 </li>
-<li>Make the following blocks.
-</li>
-
-<li><b>Set player to 1</b>
-</li>
-</ul>
-<p>
-<img src="img/screenshot2.PNG" alt="screenshot2.PNG" />
-#Set the initial state
--make another variable called state and set to 21. We also need to let the user know what is the initial state, we can play with this number later to add to the game, and make a while loop to keep the game going.
-</p>
-
-
+<li>LOOP THESE NEXT INSTRUCTIONS UNTIL THERE ARE NO STICKS LEFT:
 <ul class="org-ul">
-<li><b>Set a valid move</b>
+<li>The current <b>player</b> makes a move.
+</li>
+<li>Change the current player.
+</li>
+<li>Output how many sticks remain.
 </li>
 </ul>
-
-<div class="figure">
-<p><img src="img/screenshot3.PNG" alt="screenshot3.PNG" />
-</p>
-</div>
-<ul class="org-ul">
-<li>What is a valid move? The player can pick either 1,2 or 3. 
 </li>
-<li>As there is more that one thing to remember here a variable is not the data structure we are looking for&#x2026; 
-</li>
-<li>What is? A list of course! Make a list called 'validMove' and add 1,2 and 3 as elements.
-</li>
-<li>Can a player always pick 1-3? Not always. If we are approaching the end of the game there may be only 1 or two left. We'll need to add some code to check whether there are enough sticks left.
+<li>When the sticks have run out, announce the winner.
 </li>
 </ul>
+</li>
 
-<div class="figure">
-<p><img src="img/screenshot4.PNG" alt="screenshot4.PNG" />
-</p>
-</div>
-
-
-<ul class="org-ul">
-<li>Grab the following blocks and combine in such a way to set the state to be the number of sticks (state) minus the next go (answer). The let the player know.
+<li>Open <a href="https://scratch.mit.edu/projects/86929754/#editor">this</a> link on the Scratch site. If you've a Scratch account, you can log into it at this point. If you've not got one (or can't remember your password), you can always use the 'File -&gt; Download to your Computer' link in the top right-hand corner when you've finished your work.
 </li>
 </ul>
-
-<div class="figure">
-<p><img src="img/screenshot5.PNG" alt="screenshot5.PNG" />
-</p>
-</div>
-
-<ul class="org-ul">
-<li><b>Check if someone's won:</b> 
-</li>
-<li>The game ends when someone wins. We need to check using a conditional (IF statement) whether the state is one and if so let them know and break out of the loop.
-</li>
-</ul>
-
-<div class="figure">
-<p><img src="img/screenshot6.PNG" alt="screenshot6.PNG" />
-</p>
-</div>
-
-<ul class="org-ul">
-<li><b>Switch which player's turn it is:</b>
-</li>
-</ul>
-
-<div class="figure">
-<p><img src="img/screenshot7.PNG" alt="screenshot7.PNG" />
-</p>
-</div>
 </div>
 </div>
 
-<div id="outline-container-sec-1-5" class="outline-3 learn">
-<h3 id="sec-1-5">Learn It</h3>
+<div id="outline-container-sec-1-5" class="outline-3 code">
+<h3 id="sec-1-5">Code It</h3>
 <div class="outline-text-3" id="text-1-5">
 <ul class="org-ul">
-<li>By using the rules, we can write an AI that always wins. In game theory, a "no-win" situation is one in which no player benefits from any outcome. This may be because of any or all of the following:
--Unavoidable or unforeseeable circumstances causing the situation to change after decisions have been made. This is common in Text adventures
+<li>You've now got the code we designed above all set out.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="./img/w1_1.png" alt="w1_1.png" />
+</p>
+</div>
 <ul class="org-ul">
+<li>Because we broke all the main coding ideas out into blocks (called functions when coding), this makes the main program looking nice and clear.
+</li>
+<li>If you try playing the game, you'll see there are a few issues.
+<ul class="org-ul">
+<li>It's always player 1's turn
+</li>
+<li>The game doesn't tell you who's won; it just stops.
+</li>
+<li>You can take 1, 2, 3, -2, 100&#x2026; sticks each time.
+</li>
+</ul>
+</li>
+<li>We now need to define the different functions, to make the program work. 
+</li>
+<li>If you're feeling bold, you could even try to implement an AI to play against once you get this working. 
+</li>
+</ul>
+
+
+
+<ul class="org-ul">
+<li><b>Switch player</b>
+</li>
+<li>We have a variable called 'player'. Let's use this to store either a 1 or a 2 depending on who's turn it is. 
+</li>
+<li>We need to change the player from 1 to 2 once player 1 has made his/her move.
+</li>
+<li>We also need to set the player back to 1 once player 2 makes their move.
+</li>
+<li>Therefore the code in the 'define Switch Player' block needs to be:
+</li>
+</ul>
+<pre class="example">
+IF player = 1:
+   player = 2
+ELSE:
+   player = 1
+END IF
+</pre>
+
+<ul class="org-ul">
+<li><b>Task:</b> Write the code in Scratch to define this function, using the algorithm shown above. 
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-sec-1-6" class="outline-3 code">
+<h3 id="sec-1-6">Code It</h3>
+<div class="outline-text-3" id="text-1-6">
+<ul class="org-ul">
+<li><b>Making valid moves</b>
+</li>
+<li>What is a valid move? The player can pick either 1,2 or 3. 
+</li>
+<li>People tend to make mistakes/cheat though, so we need to include a little 'data validation' to ensure they're making a valid move.
+</li>
+<li>Our 'Make a move' algorithm is currently:
+</li>
+</ul>
+
+<pre class="example">
+answer &lt;-- INPUT "Player &lt;player&gt;'s turn..."
+sticks = sticks - answer
+</pre>
+
+<ul class="org-ul">
+<li>The code in Scratch looks like this:
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="./img/w1_2.png" alt="w1_2.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>We need to improve this to&#x2026;
+</li>
+</ul>
+
+<pre class="example">
+valid_move = False
+
+REPEAT WHILE valid_move = False
+    answer &lt;-- INPUT "Player &lt;player&gt;'s turn..."
+    IF answer&gt;0 AND answer&lt;4 THEN:
+        valid_move = True
+        sticks = sticks - answer
+    ELSE:
+        PRINT "Invalid move. Try again."
+    ENDIF
+
+END REPEAT
+</pre>
+
+<ul class="org-ul">
+<li><b>Task:</b> Write the code to only allow valid moves.
+</li>
+<li><i>Tip:</i> You'll need to start by creating a 'valid move' variable.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-7" class="outline-3 code">
+<h3 id="sec-1-7">Code It</h3>
+<div class="outline-text-3" id="text-1-7">
+<ul class="org-ul">
+<li><b>Establish who's won</b> 
+</li>
+<li>The main loop of the program continues until the last stick is removed (i.e. the 'stick' variable goes below 1). 
+</li>
+<li>When this happens, we need to show a message to say that either player 1 or 2 is the winner.
+</li>
+</ul>
+<pre class="example">
+IF player=1 THEN:
+    PRINT "Player 2 wins"
+ELSE:
+    PRINT "Player 1 wins"
+ENDIF
+</pre>
+<ul class="org-ul">
+<li><b>Task:</b> Code this in your script.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-8" class="outline-3 learn">
+<h3 id="sec-1-8">Learn It</h3>
+<div class="outline-text-3" id="text-1-8">
+<ul class="org-ul">
+<li>By using the rules, we can write an AI that always wins. In game theory, a "no-win" situation is one in which no player benefits from any outcome. This may be because of any or all of the following:
+<ul class="org-ul">
+<li>Unavoidable or unforeseeable circumstances causing the situation to change after decisions have been made. This is common in Text adventures
+</li>
 <li>Zugzwang, as in chess, when any move a player chooses makes him worse off than before but the rules of chess means they have to move
 </li>
 <li>A situation in which the player has to accomplish two mutually dependent tasks each of which must be completed before the other or that are mutually exclusive (a Catch-22)
@@ -249,23 +346,17 @@ for the JavaScript code in this tag.
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-1-6" class="outline-3 badge">
-<h3 id="sec-1-6">Badge It</h3>
-<div class="outline-text-3" id="text-1-6">
-
+<div id="outline-container-sec-1-9" class="outline-3 badge">
+<h3 id="sec-1-9">Badge It</h3>
+<div class="outline-text-3" id="text-1-9">
 <ul class="org-ul">
 <li><b>Silver:</b> Write a set of rules for someone who has never played '21' before so that they will always win.
 </li>
 <li><b>Gold:</b> Write a working two-player game of 21 in Scratch. Upload a screenshot of your code AND the <b>.sb2</b> file to the upload points. 
 </li>
-<li><b>Platinum:</b> Look at the below code. Why does it not work? Add and fix for the Platinum Badge.
+<li><b>Platinum:</b> Implement a one-player version with a computer opponent. The computer should randomly choose to play either a 1, 2 or 3. Bonus points if you implement a strategy that means the computer will always win.
 </li>
 </ul>
-
-<div class="figure">
-<p><img src="img/screenshot8.PNG" alt="screenshot8.PNG" />
-</p>
-</div>
 </div>
 </div>
 </div>
