@@ -143,32 +143,43 @@
 :END:
 - You're going to make your own version of Nim for two human players. 
 - We start with a high-level plan; this is written in pseudocode to help work out the sequence of instructions we'll need to code before we start.
+- The presmise is this:
    - Store the number of *sticks* and which *player*'s turn it is.
-   - LOOP THESE NEXT INSTRUCTIONS UNTIL THERE ARE NO STICKS LEFT:
+   - LOOP UNTIL THERE ARE NO STICKS LEFT:
       - The current *player* makes a move.
       - Change the current player.
       - Output how many sticks remain.
    - When the sticks have run out, announce the winner.
 
-- Open [[https://scratch.mit.edu/projects/86929754/#editor][this]] link on the Scratch site. If you've a Scratch account, you can log into it at this point. If you've not got one (or can't remember your password), you can always use the 'File -> Download to your Computer' link in the top right-hand corner when you've finished your work.
 
-** Code It
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: code
-:END:
-- You've now got the code we designed above all set out.
+- We can write out some pseudocode to help us think about how we'd write out program.
+#+begin_src
+sticks=21
+player=1
+
+LOOP UNTIL sticks<1:
+    The current <player> makes a move.
+    Change the current player.
+    PRINT How many sticks remain.
+END LOOP
+
+PRINT Winner
+#+end_src
+
++ Open *>>* [[https://scratch.mit.edu/projects/86929754/#editor][this]] *<<* Scratch link in a new tab. If you've a Scratch account, you can log into it at this point. If you've not got one (or can't remember your password), you can always use the 'File -> Download to your Computer' link in the top left-hand corner when you've finished your work. You've now got the pseudocode above all set out.
 [[./img/w1_1.png]]
-- Because we broke all the main coding ideas out into blocks (called functions when coding), this makes the main program looking nice and clear.
+- Because we broke all the main coding ideas out into blocks (called functions when coding), this keeps the main program clean and easy to read.
 - If you try playing the game, you'll see there are a few issues.
    - It's always player 1's turn
    - The game doesn't tell you who's won; it just stops.
    - You can take 1, 2, 3, -2, 100... sticks each time.
-- We now need to define the different functions, to make the program work. 
-- If you're feeling bold, you could even try to implement an AI to play against once you get this working. 
+- We now need to define the different function blocks to make the program work. 
+- If you're feeling ambitious, you could eventually implement an AI to play against once you get the two-player version working. 
 
-
-
-- *Switch player*
+** Code It: Switch player
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
 - We have a variable called 'player'. Let's use this to store either a 1 or a 2 depending on who's turn it is. 
 - We need to change the player from 1 to 2 once player 1 has made his/her move.
 - We also need to set the player back to 1 once player 2 makes their move.
@@ -183,16 +194,13 @@ END IF
 
 - *Task:* Write the code in Scratch to define this function, using the algorithm shown above. 
 
-
-** Code It
+** Code It: Making a move
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: code
 :END:
-- *Making valid moves*
 - What is a valid move? The player can pick either 1,2 or 3. 
-- People tend to make mistakes/cheat though, so we need to include a little 'data validation' to ensure they're making a valid move.
+- People tend to make mistakes (or try and cheat) though, so we need to include a little 'data validation' to ensure the player is making a valid move.
 - Our 'Make a move' algorithm is currently:
-
 #+begin_src
 answer <-- INPUT "Player <player>'s turn..."
 sticks = sticks - answer
@@ -220,11 +228,10 @@ END REPEAT
 - *Task:* Write the code to only allow valid moves.
 - /Tip:/ You'll need to start by creating a 'valid move' variable.
 
-** Code It
+** Code It: Establish the winner
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: code
 :END:
-- *Establish who's won* 
 - The main loop of the program continues until the last stick is removed (i.e. the 'stick' variable goes below 1). 
 - When this happens, we need to show a message to say that either player 1 or 2 is the winner.
 #+begin_src
@@ -241,8 +248,8 @@ ENDIF
 :END:
 - By using the rules, we can write an AI that always wins. In game theory, a "no-win" situation is one in which no player benefits from any outcome. This may be because of any or all of the following:
     - Unavoidable or unforeseeable circumstances causing the situation to change after decisions have been made. This is common in Text adventures
-    - Zugzwang, as in chess, when any move a player chooses makes him worse off than before but the rules of chess means they have to move
-    - A situation in which the player has to accomplish two mutually dependent tasks each of which must be completed before the other or that are mutually exclusive (a Catch-22)
+    - /Zugzwang/, as in chess, when any move a player chooses makes him worse off than before but the rules of chess means they have to move
+    - A situation in which the player has to accomplish two mutually dependent tasks each of which must be completed before the other or that are mutually exclusive ([[https://en.wikipedia.org/wiki/Catch-22_(logic)][a Catch-22]]).
     - Ignorance of other players' actions, meaning the best decision for all differs from that for any one player (as in the Prisoner's Dilemma).
 ** Badge It
 :PROPERTIES:
@@ -250,4 +257,6 @@ ENDIF
 :END:
 - *Silver:* Write a set of rules for someone who has never played '21' before so that they will always win.
 - *Gold:* Write a working two-player game of 21 in Scratch. Upload a screenshot of your code AND the *.sb2* file to the upload points. 
-- *Platinum:* Implement a one-player version with a computer opponent. The computer should randomly choose to play either a 1, 2 or 3. Bonus points if you implement a strategy that means the computer will always win.
+- *Platinum:* Implement a one-player version with a computer opponent. 
+   - The computer should randomly choose to play either a 1, 2 or 3. 
+   - If you can do this, see if you can implement a strategy that means the computer will always win when it goes first.
