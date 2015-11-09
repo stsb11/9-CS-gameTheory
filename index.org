@@ -17,7 +17,11 @@
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: link-heading
 :END:
-* [[file:pages/2_Lesson.html][Week 2 - The prisoner's dilemma]]
+* [[file:pages/2_Lesson.html][Week 2 - Nim Reloaded]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:
+* [[file:pages/3_Lesson.html][Week 3 - The prisoner's dilemma]]
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: link-heading
 :END:
