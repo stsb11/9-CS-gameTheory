@@ -187,13 +187,13 @@
 
 - Open Python and add this code to your Python file.
 
-[[./img/screenshot1A.png]]
+[[./img/scrnshot1a.png]]
 
 - Part 2. =XOR= function. Again Python has some built-in functions to help to add using =bin(a&b)=,use the or function using =bin(a|b)= and most importantly, for us, the XOR function using =bin(a^b)=. 
 
 - Add this extra code to your Python file.
 
-[[./img/screenshot2A.png]]
+[[./img/scrnshot2a.png]]
 
 
 - Part 2. Finally lets us know which ones to remove and from what pile. Use you new helper program to tackle more NIM levels. 
