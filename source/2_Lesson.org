@@ -95,8 +95,13 @@
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: document
 :END:
-- Watch the video https://www.youtube.com/watch?v=7yDmGnA8Hw0
-- Write an algorithm to solve the bridge riddle. You need to get everyone, in pairs, across in 17 minutes for the zombies get you.
+- Watch the video...
+
+#+BEGIN_HTML 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7yDmGnA8Hw0" frameborder="0" allowfullscreen></iframe>
+#+END_HTML
+
+- Write an algorithm to solve the bridge riddle. You need to get everyone, in pairs, across in 17 minutes before the zombies get you.
 
 ** Learn It
 :PROPERTIES:
@@ -184,7 +189,7 @@
 
 [[./img/screenshot1A.png]]
 
-- Part 2. Xor function. Again Python has some built-in functions to help to add using bin(a&b),use the or function using bin(a|b) and most importantly, for us, the xor function using bin(a^b). 
+- Part 2. =XOR= function. Again Python has some built-in functions to help to add using =bin(a&b)=,use the or function using =bin(a|b)= and most importantly, for us, the XOR function using =bin(a^b)=. 
 
 - Add this extra code to your Python file.
 
