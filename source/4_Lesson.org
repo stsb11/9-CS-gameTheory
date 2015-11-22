@@ -125,18 +125,18 @@
 - Using Python lets make our own Ultimatum game.
 - Firstly lets think about the pseudocode
 
-[[./img/1_sshot.jpg]]
+[[./img/1_sshot.JPG]]
 
 - Now lets add the code which we will do in two stages.
 - Secondly open IDLE and get coding!
 
 
 - Part One 
-[[./img/2_sshot.jpg]]
+[[./img/2_sshot.JPG]]
 
 - Part Two
 
-[[./img/3_sshot.jpg]]
+[[./img/3_sshot.JPG]]
 
 ** Try It
 :PROPERTIES:
@@ -169,7 +169,7 @@
 
 - Here is the pseudocode to help you:
 
-[[./img/4_sshot.jpg]]
+[[./img/4_sshot.JPG]]
 
 ** Try It
 :PROPERTIES:
@@ -192,7 +192,7 @@ Lets expand our original game program to include the three rounds.
 
 Here is some pseudocode to help your challenge.
 
-[[./img/5_sshot.jpg]]
+[[./img/5_sshot.JPG]]
 
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
