@@ -30,11 +30,10 @@
 :HTML_CONTAINER_CLASS: link-heading
 :END:      
 
-* [[file:pages/4_Lesson.html][Week 5 - Pirates and Birthdays]]
+* [[file:pages/5_Lesson.html][Week 5 - Pirates and Paradoxes]]
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: link-heading
 :END:      
-
 
 * COMMENT  [[file:pages/assessment.html][Assessment]]
 :PROPERTIES:
