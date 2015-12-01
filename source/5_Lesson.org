@@ -142,7 +142,7 @@ Work out the best results for pirate A using Backward induction and start with o
 - This is sometimes called the *normal form*.
 - Here is one we used for the Prisoner's dilemma:
 
-[[./img/prisoners_dilemma_matrix.JPG]]
+[[./img/prisoners.JPG]]
 
 - Basically the players and their possible actions are on the outside of the table. The outcomes are added in the inside of the table.
 
@@ -154,7 +154,7 @@ Work out the best results for pirate A using Backward induction and start with o
 - This is sometimes called the *extensive form*.
 -  Here is one we could have used for the Prisoner's dilemma:
 
-[[./img/Monty_Hall_tree.PNG]]
+[[./img/monty.PNG]]
 
 //image courtesy of retroworks.blogspot.co.uk//
 
