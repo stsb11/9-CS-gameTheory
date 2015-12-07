@@ -137,7 +137,7 @@
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: code
 :END:
-- In a new browser tab, open [[https://scratch.mit.edu/projects/84082932/#editor][this link]] to see a prisoner's dilemma simulator
+- In a new browser tab, open [[https://scratch.mit.edu/projects/84074310/#editor][this link]] to see a prisoner's dilemma simulator
 - If you've a Scratch account, you can sign in to save the work you'll do here.
 - If you've not got one, you can always click 'File -> Download to your computer' when you're finished to ensure your work is saved.
 - Unfortunately, it looks like the developer didn't have time to finish the code, and there are some blanks. 
