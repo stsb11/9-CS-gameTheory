@@ -98,19 +98,13 @@
 :HTML_CONTAINER_CLASS: document
 :END:
 - Watch the video.
-
 #+BEGIN_HTML 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/mhlc7peGlGg" frameborder="0" allowfullscreen></iframe>
 #+END_HTML
-
-    Open a text editor and answer the following questions:
-
+- Open a text editor and answer the following questions:
 - What is the problem?
-  
 - Should you swap, stick with your choice or does it make no difference?
-
 - What is the correct choice? Can you explain why?
-
 ** Learn It: Ultimatum
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: learn
@@ -118,60 +112,44 @@
 - Ultimatum is a single round game. 
 - One player offers a share of a specified amount of money and the second player can choose to accept or reject this offer. 
 - If the second player accepts both get the agreed share however if they choose to reject they both get nothing.
-- Let try to solve the ultimatum game, in which one side makes a take-it-or-leave-it (also called fait accompli or ultimatum) offer.
+- Let try to solve the ultimatum game, in which one side makes a take-it-or-leave-it (also called /fait accompli/ or ultimatum) offer.
 ** Code It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: code
 :END:
 - Using Python lets make our own Ultimatum game.
 - Firstly lets think about the pseudocode
-
 [[./img/1_sshot.JPG]]
-
-- Now lets add the code which we will do in two stages.
-- Secondly open IDLE and get coding!
-
-
-- Part One 
-[[./img/2_sshot.JPG]]
-
-- Part Two
-
-[[./img/3_sshot.JPG]]
-
+- The code for the Ultimatum game is shown in the Trinket below:
+#+BEGIN_HTML 
+<iframe src="https://trinket.io/embed/python/c1986a151a" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+#+END_HTML
 ** Try It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: try
 :END:
-- Using your code get other people in the room to play. Aim for 10 rounds of the game.
-- If everyone moves to the left.
+- Using the code get other people in the room to play. Aim for 10 rounds of the game.
 ** Document It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: document
 :END:
 - What pattern can you see?
-
 - If they were using 'backward induction' what offers should they accept?
-
-- Why do they sometimes reject?
-
+- Why do other people sometimes reject offers?
 ** Learn It: Dictator Game
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: learn
 :END:
 - In the dictator game, one student decides how to split a pot of money between herself and the other student. 
-- Once the decision has been made, the two students receive the specified split.
-- This game teaches students about the existence of altruists in the population, and when coupled with the ultimatum game can show students how to differentiate social norms from strategic responses.
+- Once the decision has been made, the two students receive the specified split and the game is over.
+- This game teaches us about the existence of [[https://en.wikipedia.org/wiki/Altruism][altruists]] in the population, and when coupled with the ultimatum game can show students how to differentiate social norms from strategic responses.
 ** Code It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: code
 :END:
 - Adapt your first program to just accept the first proposal with no chance of rejection. Use the comment out instruction rather than deleting code - we will need it later.
-
 - Here is the pseudocode to help you:
-
 [[./img/4_sshot.JPG]]
-
 ** Try It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: try
@@ -179,39 +157,40 @@
 - Using your code get other people in the room to play. Aim for 10 rounds of the game.
 - If everyone moves to the left.
 - Ask 10 students to play your game.
-
 - What is your average score? Highest? Lowest?
-What has happened to the scores compared to the Ultimatum game?
-
+- What has happened to the scores compared to the Ultimatum game?
 ** Try It: Multiple rounds
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: try
 :END:
-- The Bargaining(Nash) game is a simple 2 player game used to model other bargaining interactions. This time the second player is going to be able to make counteroffers. THere are 3 rounds and if there is no agreement at the end then no one gets any money.
+- The Bargaining (Nash) game is a simple 2 player game used to model other bargaining interactions. This time the second player is going to be able to make counteroffers. There are 3 rounds and if there is no agreement at the end then no one gets any money.
 ** Code It
-Lets expand our original game program to include the three rounds.
-
-Here is some pseudocode to help your challenge.
-
+- Lets expand our original game program to include the three rounds.
+- Here is some pseudocode to help your challenge.
 [[./img/5_sshot.JPG]]
-
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
 :END:
-** Badge It Silver
+** Badge It: Silver
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
 :END:
-- Upload your code for Ultimatum game the silver badge.
-** Badge It Gold
+- Complete the code for the Prisoner's dilemma game (week 3) in Scratch. Upload a screenshot of the code.
+- *OR...*
+- Modify the Trinket code to work as the Dictator game, and upload a screenshot of it running.
+** Badge It: Gold
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
 :END:
-- Upload your code for Dictator game the Gold badge.
-** Badge It Platinum
+- In the Prisoner's Dilemma, modify the cat's strategy to be an 'angel'. It always stays silent, and never betrays the human player. Screenshot the code block that sets this strategy and upload it. Develop a second, 'Unpredictable puss' strategy for the cat, so that it betrays or stays silent at random. Screenshot this, and upload it too.
+- *OR...*
+- Modify the code to create the bargaining game. Upload a screenshot of it running to collect the badge.
+** Badge It: Platinum
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
 :END:
-- Upload your code for the mulitple round bargaining game for the platinum badge.
-
-
+- For the Prisoner's dilemma program, modify the cat's strategy so that it holds a grudge…
+- It will remain silent every time the game is played, until the human player betrays, then…
+- It will then always betray the human player until the game is reset.
+- *OR...*
+- Modify the bargaining game to show some statistics at the end of the game (/e.g. how many rounds, highest offer, lowest offer, etc/).

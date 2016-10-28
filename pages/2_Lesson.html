@@ -229,46 +229,19 @@ for the JavaScript code in this tag.
 <td class="right">7</td>
 <td class="right">0111</td>
 </tr>
-</tbody>
-</table>
 
-
-<p>
--Next we add up these binary numbers, vertically, in a special way:
-</p>
-
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-
-<colgroup>
-<col  class="left" />
-
-<col  class="right" />
-</colgroup>
-<thead>
 <tr>
-<th scope="col" class="left">Sticks</th>
-<th scope="col" class="right">Binary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="left">X</td>
-<td class="right">0001</td>
+<td class="right">8</td>
+<td class="right">1000</td>
 </tr>
 
 <tr>
-<td class="left">XXXX</td>
-<td class="right">0100</td>
+<td class="right">9</td>
+<td class="right">1001</td>
 </tr>
 
 <tr>
-<td class="left">XXXXXXX</td>
-<td class="right">0111</td>
-</tr>
-
-<tr>
-<td class="left">TOTAL</td>
+<td class="right">10</td>
 <td class="right">1010</td>
 </tr>
 </tbody>
@@ -276,80 +249,149 @@ for the JavaScript code in this tag.
 
 
 <ul class="org-ul">
-<li>For any column with an even number of 1's, we put down a zero. For an odd number, we put down a one. This is called the "Exclusive Or".
+<li>Next we perform a special operation on these binary numbers, by following the following process:
 </li>
-<li>Check the totals above to see if the total is correct. Now to win, we want to get this sum to total 0000. 
+<li>For each column of digits, if there are an even number of 1's, write a zero at the bottom of that column. If there are an odd number, write a one. This is called the <code>Bitwise exclusive or</code> operation.
 </li>
-<li>Looking over the numbers above, it looks like if we took this sum away from the third pile &#x2013; changing a 7 (0111 in binary) to a 5 (0101 in binary) &#x2013; then the special sum would become 0000. 
+</ul>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="right" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="right">Pile</th>
+<th scope="col" class="left">Sticks</th>
+<th scope="col" class="left">Binary</th>
+<th scope="col" class="right">Denary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="right">1</td>
+<td class="left">X</td>
+<td class="left"><code>0001</code></td>
+<td class="right">1</td>
+</tr>
+
+<tr>
+<td class="right">2</td>
+<td class="left">XXXX</td>
+<td class="left"><code>0100</code></td>
+<td class="right">4</td>
+</tr>
+
+<tr>
+<td class="right">3</td>
+<td class="left">XXXXXXX</td>
+<td class="left"><code>0111</code></td>
+<td class="right">7</td>
+</tr>
+
+<tr>
+<td class="right">&#xa0;</td>
+<td class="left"><b>pile-sum:</b></td>
+<td class="left"><code>0010</code></td>
+<td class="right">2</td>
+</tr>
+</tbody>
+</table>
+
+<ul class="org-ul">
+<li>In the example above, the right-most column has a 1, then a 0, another 1. There are an even number of 1s (two of them), so we write <code>0</code> at the bottom of the column.
 </li>
-<li>You continue this operation until you win the game. Of course, if your opponent has left you with a special sum of 0000, then you will lose, assuming perfect play on their part. So, 0 XOR 0 = 0, 1 XOR 0 = 1, 0 XOR 1 = 1, and 1 XOR 1 = 0. Or, more simply, the result of the XOR operation is 0 if both arguments are the same and 1 if the arguments are different.
+<li>The next column (third from the left) has only one <code>1</code> in it; an odd number. We write a <code>1</code> at the bottom of that column.
+</li>
+<li>The resulting 4-bit number (0010 in this example) is called the <i>pile-sum</i>.
+</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>To win, we want to get the pile-sum to total <code>0000</code> after our turn.
+</li>
+<li>Looking over the numbers above, it looks like if we took the pile-sum away from the third pile, we'd changing a 7 (<code>0111</code> in binary) to a 5 (<code>0101</code> in binary). The pile sum would then be <code>0000</code>. 
+</li>
+<li>On the other player's turn, it now doesn't matter which pile they take from, as long as you reduce the pile sum back to <code>0000</code> on your turn.
+</li>
+<li>You can now continue this process until you win the game by taking the last stick. 
+</li>
+<li>If your opponent knows the strategy and leaves you with a pile sum of <code>0000</code>, then you will lose, assuming perfect play on their part.
 </li>
 </ul>
 </div>
 </div>
-
 <div id="outline-container-sec-1-6" class="outline-3 code">
 <h3 id="sec-1-6">Code It</h3>
 <div class="outline-text-3" id="text-1-6">
 <ul class="org-ul">
-<li>Using Python lets make a binary converter and XOR calculator so that we can <b>always</b> win!
+<li>This is a lot of mental calculation. It'd be better if we wrote a program in Python to tell us our moves, so that we can <b>always</b> win!
 </li>
-
-<li>Pseudocode for this program will involve several functions. We need a function to convert the denary number into binary. This will need to ask for the three numbers and convert them in turn. The second part will need to add them using the XOR function. Finally it needs to advise us what to do. OK that's a general plan lets be more specific.
+<li>To write this program, we'll need to take several steps. 
+<ul class="org-ul">
+<li>We need the ability to convert the denary numbers into their binary equivalent. 
 </li>
-
-<li>Part 1. Make a function to convert denary to binary. We are in luck Python has a built-in function, once we import math. 
+<li>This will need to ask for the three numbers and convert them into binary.
 </li>
-
-<li>Open Python and add this code to your Python file.
+<li>We will need to XOR these binary numbers to get the pile sum. 
+</li>
+<li>Finally, we should advise the player of what to do. 
 </li>
 </ul>
+</li>
+<li>Now we've a general plan, let's get started&#x2026;
+</li>
 
-
-<div class="figure">
-<p><img src="./img/scrnshot1a.png" alt="scrnshot1a.png" />
-</p>
-</div>
+<li><b>Step 1:</b> Make a function to convert denary to binary. A quick Google search tells us that Python has a built-in function to handle this.
+</li>
+</ul>
+<iframe src="https://trinket.io/embed/python/407337d485" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
 <ul class="org-ul">
-<li>Part 2. <code>XOR</code> function. Again Python has some built-in functions to help to add using <code>bin(a&amp;b)</code>,use the or function using <code>bin(a|b)</code> and most importantly, for us, the XOR function using <code>bin(a^b)</code>. 
+<li><b>Step 2:</b> <code>XOR</code> function. Google to the rescue again; Python also has some built-in functions to do the <code>XOR</code> operation for us, by using the <code>bin(a ^ b)</code> function. 
 </li>
-
-<li>Add this extra code to your Python file.
+<li>Our code now can be updated to include this new functionality&#x2026;
 </li>
 </ul>
-
-
-<div class="figure">
-<p><img src="./img/scrnshot2a.png" alt="scrnshot2a.png" />
-</p>
-</div>
-
-
+<iframe src="https://trinket.io/embed/python/fc8c6c1b62" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 <ul class="org-ul">
-<li>Part 2. Finally lets us know which ones to remove and from what pile. Use you new helper program to tackle more NIM levels. 
+<li><b>Step 3:</b> Once we know this information, we can calculate which pile to remove sticks from, and how many to take. 
+</li>
+<li>The Trinket below shows a solution for a 3-pile game. You can use this to complete up to level 4 on the <a href="http://www.transum.org/Software/Nim/">online Nim game</a>.
 </li>
 </ul>
+<iframe src="https://trinket.io/embed/python/d56d877bbd?start=result" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 </div>
 </div>
-
 <div id="outline-container-sec-1-7" class="outline-3 research">
 <h3 id="sec-1-7">Research It</h3>
 <div class="outline-text-3" id="text-1-7">
 <ul class="org-ul">
-<li>What is Exclusive Or? 
+<li>What is Exclusive Or (XOR)? 
 </li>
 <li>How do we use it in Computer Science?
 </li>
 </ul>
 </div>
 </div>
-
 <div id="outline-container-sec-1-8" class="outline-3 badge">
 <h3 id="sec-1-8">Badge It Silver</h3>
 <div class="outline-text-3" id="text-1-8">
 <ul class="org-ul">
-<li>Upload your algorithm to solve the bridge puzzle and certificates of NIM levels. 
+<li>Write a set of rules for someone who has never played '21' before so that they will always win. You may need to re-read the week 1 notes for this.
+</li>
+<li><b>OR&#x2026;</b>
+</li>
+<li>Use the helper program to win Nim level 2 on the <a href="http://www.transum.org/Software/Nim/">online Nim game</a>. Upload a screenshot of the victory screen as evidence.
 </li>
 </ul>
 </div>
@@ -358,7 +400,11 @@ for the JavaScript code in this tag.
 <h3 id="sec-1-9">Badge It Gold</h3>
 <div class="outline-text-3" id="text-1-9">
 <ul class="org-ul">
-<li>Upload your code for the Gold badge and complete two more levels on the NIM game using your calculator.
+<li>Write a working two-player game of 21 in Scratch. Upload a screenshot of your code; the week one notes will help.
+</li>
+<li><b>OR&#x2026;</b>
+</li>
+<li>Modify the code above, so that you can complete level 5 and level 6 of the <a href="http://www.transum.org/Software/Nim/">online Nim</a> game. Upload a screenshot of the level 6 victory screen as evidence, and a seperate screenshot of your code.
 </li>
 </ul>
 </div>
@@ -367,7 +413,11 @@ for the JavaScript code in this tag.
 <h3 id="sec-1-10">Badge It Platinum</h3>
 <div class="outline-text-3" id="text-1-10">
 <ul class="org-ul">
-<li>For platinum write a short report answering the above research questions giving lots of examples.
+<li>Implement a one-player version of '21' Nim in Scratch, so that you can play with a computer opponent. You may wish to look back at the last lesson's notes for hints.
+</li>
+<li>The computer should randomly choose to play either a 1, 2 or 3. 
+</li>
+<li>Implement a strategy that means the computer will always win when it goes first.
 </li>
 </ul>
 </div>
@@ -375,7 +425,7 @@ for the JavaScript code in this tag.
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="validation"></p>
 </div>
 </body>
 </html>

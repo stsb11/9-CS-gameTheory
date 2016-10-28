@@ -6,7 +6,7 @@
 #+OPTIONS: f:nil author:nil num:nil creator:nil timestamp:nil toc:nil html-style:nil
 
 #+TITLE: Nice but NIM
-#+AUTHOR: Paul Dougall
+#+AUTHOR: Paul Dougall + Stephen Brown
 
 #+BEGIN_HTML
   <div class="github-fork-ribbon-wrapper left">
@@ -160,46 +160,58 @@
 |       5 |   0101 |
 |       6 |   0110 |
 |       7 |   0111 |
+|       8 |   1000 |
+|       9 |   1001 |
+|      10 |   1010 |
 
 
--Next we add up these binary numbers, vertically, in a special way:
+- Next we perform a special operation on these binary numbers, by following the following process:
+- For each column of digits, if there are an even number of 1's, write a zero at the bottom of that column. If there are an odd number, write a one. This is called the =Bitwise exclusive or= operation.
 
-| Sticks  | Binary |
-|---------+--------|
-|   X     | 0001   |
-| XXXX    | 0100   |
-|XXXXXXX  | 0111   |
-| TOTAL   | 1010   |
+| Pile | Sticks      | Binary | Denary |
+|------+-------------+--------+--------|
+|    1 | X           | =0001= |      1 |
+|    2 | XXXX        | =0100= |      4 |
+|    3 | XXXXXXX     | =0111= |      7 |
+|      | *pile-sum:* | =0010= |      2 |
 
-  
-- For any column with an even number of 1's, we put down a zero. For an odd number, we put down a one. This is called the "Exclusive Or".
-- Check the totals above to see if the total is correct. Now to win, we want to get this sum to total 0000. 
-- Looking over the numbers above, it looks like if we took this sum away from the third pile -- changing a 7 (0111 in binary) to a 5 (0101 in binary) -- then the special sum would become 0000. 
-- You continue this operation until you win the game. Of course, if your opponent has left you with a special sum of 0000, then you will lose, assuming perfect play on their part. So, 0 XOR 0 = 0, 1 XOR 0 = 1, 0 XOR 1 = 1, and 1 XOR 1 = 0. Or, more simply, the result of the XOR operation is 0 if both arguments are the same and 1 if the arguments are different.
+- In the example above, the right-most column has a 1, then a 0, another 1. There are an even number of 1s (two of them), so we write =0= at the bottom of the column.
+- The next column (third from the left) has only one =1= in it; an odd number. We write a =1= at the bottom of that column.
+- The resulting 4-bit number (0010 in this example) is called the /pile-sum/.
 
+
+- To win, we want to get the pile-sum to total =0000= after our turn.
+- Looking over the numbers above, it looks like if we took the pile-sum away from the third pile, we'd changing a 7 (=0111= in binary) to a 5 (=0101= in binary). The pile sum would then be =0000=. 
+- On the other player's turn, it now doesn't matter which pile they take from, as long as you reduce the pile sum back to =0000= on your turn.
+- You can now continue this process until you win the game by taking the last stick. 
+- If your opponent knows the strategy and leaves you with a pile sum of =0000=, then you will lose, assuming perfect play on their part.
 ** Code It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: code
 :END:
-- Using Python lets make a binary converter and XOR calculator so that we can *always* win!
+- This is a lot of mental calculation. It'd be better if we wrote a program in Python to tell us our moves, so that we can *always* win!
+- To write this program, we'll need to take several steps. 
+   - We need the ability to convert the denary numbers into their binary equivalent. 
+   - This will need to ask for the three numbers and convert them into binary.
+   - We will need to XOR these binary numbers to get the pile sum. 
+   - Finally, we should advise the player of what to do. 
+- Now we've a general plan, let's get started...
 
-- Pseudocode for this program will involve several functions. We need a function to convert the denary number into binary. This will need to ask for the three numbers and convert them in turn. The second part will need to add them using the XOR function. Finally it needs to advise us what to do. OK that's a general plan lets be more specific.
+- *Step 1:* Make a function to convert denary to binary. A quick Google search tells us that Python has a built-in function to handle this.
+#+BEGIN_HTML
+<iframe src="https://trinket.io/embed/python/407337d485" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+#+END_HTML
 
-- Part 1. Make a function to convert denary to binary. We are in luck Python has a built-in function, once we import math. 
-
-- Open Python and add this code to your Python file.
-
-[[./img/scrnshot1a.png]]
-
-- Part 2. =XOR= function. Again Python has some built-in functions to help to add using =bin(a&b)=,use the or function using =bin(a|b)= and most importantly, for us, the XOR function using =bin(a^b)=. 
-
-- Add this extra code to your Python file.
-
-[[./img/scrnshot2a.png]]
-
-
-- Part 2. Finally lets us know which ones to remove and from what pile. Use you new helper program to tackle more NIM levels. 
-
+- *Step 2:* =XOR= function. Google to the rescue again; Python also has some built-in functions to do the =XOR= operation for us, by using the =bin(a ^ b)= function. 
+- Our code now can be updated to include this new functionality...
+#+BEGIN_HTML
+<iframe src="https://trinket.io/embed/python/fc8c6c1b62" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+#+END_HTML
+- *Step 3:* Once we know this information, we can calculate which pile to remove sticks from, and how many to take. 
+- The Trinket below shows a solution for a 3-pile game. You can use this to complete up to level 4 on the [[http://www.transum.org/Software/Nim/][online Nim game]].
+#+BEGIN_HTML
+<iframe src="https://trinket.io/embed/python/d56d877bbd?start=result" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+#+END_HTML
 ** Research It
 :PROPERTIES:
 
@@ -208,22 +220,26 @@
 
 :HTML_CONTAINER_CLASS: research
 :END:
-- What is Exclusive Or? 
+- What is Exclusive Or (XOR)? 
 - How do we use it in Computer Science?
-
 ** Badge It Silver
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
 :END:
-- Upload your algorithm to solve the bridge puzzle and certificates of NIM levels. 
+- Write a set of rules for someone who has never played '21' before so that they will always win. You may need to re-read the week 1 notes for this.
+- *OR...*
+- Use the helper program to win Nim level 2 on the [[http://www.transum.org/Software/Nim/][online Nim game]]. Upload a screenshot of the victory screen as evidence.
 ** Badge It Gold
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
 :END:
-- Upload your code for the Gold badge and complete two more levels on the NIM game using your calculator.
+- Write a working two-player game of 21 in Scratch. Upload a screenshot of your code; the week one notes will help.
+- *OR...*
+- Modify the code above, so that you can complete level 5 and level 6 of the [[http://www.transum.org/Software/Nim/][online Nim]] game. Upload a screenshot of the level 6 victory screen as evidence, and a seperate screenshot of your code.
 ** Badge It Platinum
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
 :END:
-- For platinum write a short report answering the above research questions giving lots of examples.
-
+- Implement a one-player version of '21' Nim in Scratch, so that you can play with a computer opponent. You may wish to look back at the last lesson's notes for hints.
+- The computer should randomly choose to play either a 1, 2 or 3. 
+- Implement a strategy that means the computer will always win when it goes first.

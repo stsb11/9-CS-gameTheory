@@ -146,12 +146,4 @@
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
 :END:
-*** Silver
-- Complete the code for the game.
-*** Gold
-- Modify the cat's strategy to be an 'angel'. It always stays silent, and never betrays the human player. 
-- Develop a new 'Unpredictable puss' strategy for the cat, so that it betrays or stays silent at random. 
-*** Platinum
-- Modify the cat's strategy so that it holds a grudge...
-- It will remain silent every time the game is played, until the human player betrays, then...
-- It will then always betray the human player until the game is reset.
+- The badge tasks for this week's tasks will be uploaded next lesson.

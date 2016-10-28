@@ -249,15 +249,11 @@ ENDIF
 :END:
 - By using the rules, we can write an AI that always wins. In game theory, a "no-win" situation is one in which no player benefits from any outcome. This may be because of any or all of the following:
     - Unavoidable or unforeseeable circumstances causing the situation to change after decisions have been made. This is common in Text adventures
-    - /Zugzwang/, as in chess, when any move a player chooses makes him worse off than before but the rules of chess means they have to move
+    - /Zugzwang/, as in chess, when any move a player chooses makes him worse off than before but the rules of chess means they have to move.
     - A situation in which the player has to accomplish two mutually dependent tasks each of which must be completed before the other or that are mutually exclusive ([[https://en.wikipedia.org/wiki/Catch-22_(logic)][a Catch-22]]).
     - Ignorance of other players' actions, meaning the best decision for all differs from that for any one player (as in the Prisoner's Dilemma).
 ** Badge It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
 :END:
-- *Silver:* Write a set of rules for someone who has never played '21' before so that they will always win.
-- *Gold:* Write a working two-player game of 21 in Scratch. Upload a screenshot of your code AND the *.sb2* file to the upload points. 
-- *Platinum:* Implement a one-player version with a computer opponent. 
-   - The computer should randomly choose to play either a 1, 2 or 3. 
-   - If you can do this, see if you can implement a strategy that means the computer will always win when it goes first.
+- You will submit your work from this task in the next lesson to collect your badges.
