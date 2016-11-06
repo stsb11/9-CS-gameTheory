@@ -106,10 +106,42 @@
 :HTML_CONTAINER_CLASS: badge
 :END:
 
-- coming soon
+- Game theory analyzes competitive situations to determine possible, probable, and optimal outcomes. One way to illustrate all possible outcomes for the prisoner's dilemma is the =payoff bimattrix=, as shown bellow:
+   [[./img/prisoners_dilemma.png]]
+Using the prinsoner's dilemma as an example and at least 200 words to explain:
+  1. what a =dominant strategy= is
+  2. what the =Nash Equilibrium= is
+
+*Your explanation must be related to the example.*
 
 ** Homework 3
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
 :END:
- - coming soon
+ - Game theory is used in a variety of fields such as political science, sociology,and economics. 
+- Exam the following situation carefully:
+#+BEGIN_SRC
+Two pubs (aka the two players):
+
+Each one of two pubs charges its own price for a beer, 
+either £2, £4, or £5. The cost of obtaining and serving
+the beer can be neglected. It is expected that 6000 beers
+per month are drunk in a bar by tourists, who choose 
+one of the two pubs randomly, and 4000 beers per month
+are drunk by natives who go to the pub with the lowest price,
+and split evenly in case both pubs offer the same price.
+What prices would the bars select?
+#+END_SRC
+
+- To illustrate how to compute the payoffs for one of the possible situation, lets assume pub A charges £2 and pub B charges £4, then all natives will choose bar A.Therefore bar A will serve 4000 beers to the natives, and 3000 beers to tourists, serving 7000 beers in total, making 7000 x 2 =£14000. Pub B will only serve 3000 beers to tourists, making 3000 x 4 = £12000. The partially finished payoff bimatrix will look like this: 
+|--------+--------------+--------------+--------------+--------------|
+| <c6>   | <c12>        | <c12>        | <c12>        | <c12>        |
+|        | £2           | £4           | £5           | A            |
+| £2     |              |              |              |              |
+| £4     | £14k,  £12k  |              |              |              |
+| £5     |              |              |              |              |
+| B      |              |              |              |              |
+|--------+--------------+--------------+--------------+--------------|
+
+- Task 1: Copy and Paste the above table and finish the payoff bimatrix.
+- Task 2: Identify the prices for both pubs that is Nash Equilibrium and explain why.

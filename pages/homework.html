@@ -101,9 +101,23 @@ for the JavaScript code in this tag.
 <div class="outline-text-3" id="text-1-2">
 
 <ul class="org-ul">
-<li>coming soon
+<li>Game theory analyzes competitive situations to determine possible, probable, and optimal outcomes. One way to illustrate all possible outcomes for the prisoner's dilemma is the <code>payoff bimattrix</code>, as shown bellow:
+<img src="./img/prisoners_dilemma.png" alt="prisoners_dilemma.png" />
 </li>
 </ul>
+<p>
+Using the prinsoner's dilemma as an example and at least 200 words to explain:
+</p>
+<ol class="org-ol">
+<li>what a <code>dominant strategy</code> is
+</li>
+<li>what the <code>Nash Equilibrium</code> is
+</li>
+</ol>
+
+<p>
+<b>Your explanation must be related to the example.</b>
+</p>
 </div>
 </div>
 
@@ -111,7 +125,89 @@ for the JavaScript code in this tag.
 <h3 id="sec-1-3">Homework 3</h3>
 <div class="outline-text-3" id="text-1-3">
 <ul class="org-ul">
-<li>coming soon
+<li>Game theory is used in a variety of fields such as political science, sociology,and economics. 
+</li>
+<li>Exam the following situation carefully:
+</li>
+</ul>
+<pre class="example">
+Two pubs (aka the two players):
+
+Each one of two pubs charges its own price for a beer, 
+either £2, £4, or £5. The cost of obtaining and serving
+the beer can be neglected. It is expected that 6000 beers
+per month are drunk in a bar by tourists, who choose 
+one of the two pubs randomly, and 4000 beers per month
+are drunk by natives who go to the pub with the lowest price,
+and split evenly in case both pubs offer the same price.
+What prices would the bars select?
+</pre>
+
+<ul class="org-ul">
+<li>To illustrate how to compute the payoffs for one of the possible situation, lets assume pub A charges £2 and pub B charges £4, then all natives will choose bar A.Therefore bar A will serve 4000 beers to the natives, and 3000 beers to tourists, serving 7000 beers in total, making 7000 x 2 =£14000. Pub B will only serve 3000 beers to tourists, making 3000 x 4 = £12000. The partially finished payoff bimatrix will look like this: 
+</li>
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="center" />
+
+<col  class="center" />
+
+<col  class="center" />
+
+<col  class="center" />
+
+<col  class="center" />
+</colgroup>
+<tbody>
+<tr>
+<td class="center">&#xa0;</td>
+<td class="center">£2</td>
+<td class="center">£4</td>
+<td class="center">£5</td>
+<td class="center">A</td>
+</tr>
+
+<tr>
+<td class="center">£2</td>
+<td class="center">&#xa0;</td>
+<td class="center">&#xa0;</td>
+<td class="center">&#xa0;</td>
+<td class="center">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="center">£4</td>
+<td class="center">£14k,  £12k</td>
+<td class="center">&#xa0;</td>
+<td class="center">&#xa0;</td>
+<td class="center">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="center">£5</td>
+<td class="center">&#xa0;</td>
+<td class="center">&#xa0;</td>
+<td class="center">&#xa0;</td>
+<td class="center">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="center">B</td>
+<td class="center">&#xa0;</td>
+<td class="center">&#xa0;</td>
+<td class="center">&#xa0;</td>
+<td class="center">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+<ul class="org-ul">
+<li>Task 1: Copy and Paste the above table and finish the payoff bimatrix.
+</li>
+<li>Task 2: Identify the prices for both pubs that is Nash Equilibrium and explain why.
 </li>
 </ul>
 </div>
