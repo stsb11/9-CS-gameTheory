@@ -97,7 +97,7 @@
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
 :END:
-- Do some online research and reading about zero sum games. Wirte a report with at least 200 words and must include the following:
+- Do some online research and reading about zero sum games. Write a report with at least 200 words and must include the following:
   1. What are zero sum games?
   2. Find two examples of zero sum games and EXPLAIN why they are zero sum games.
 
@@ -106,9 +106,9 @@
 :HTML_CONTAINER_CLASS: badge
 :END:
 
-- Game theory analyzes competitive situations to determine possible, probable, and optimal outcomes. One way to illustrate all possible outcomes for the prisoner's dilemma is the =payoff bimattrix=, as shown bellow:
+- Game theory analyzes competitive situations to determine possible, probable, and optimal outcomes. One way to illustrate all possible outcomes for the prisoner's dilemma is the =payoff bimattrix=, as shown below:
    [[./img/prisoners_dilemma.png]]
-Using the prinsoner's dilemma as an example and at least 200 words to explain:
+Using the prisoner's dilemma as an example and at least 200 words to explain:
   1. what a =dominant strategy= is
   2. what the =Nash Equilibrium= is
 
