@@ -7,10 +7,10 @@
 
 #+TITLE: Game Theory Homework
 #+AUTHOR: Xiaohui Ellis
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
   <div class="github-fork-ribbon-wrapper left">
     <div class="github-fork-ribbon">
-      <a href="https://github.com/stsb11/9-CS-LinuxIntro">Fork me on GitHub</a>
+      <a href="https://github.com/digixc/9-CS-GameTheory">Fork me on GitHub</a>
     </div>
   </div>
 <div id="stickyribbon">
@@ -20,10 +20,12 @@
       <li><a href="3_Lesson.html">Week3</a></li>
       <li><a href="4_Lesson.html">Week4</a></li>
       <li><a href="5_Lesson.html">Week5</a></li>
-      <li><a href="assessment.html">Assessment</a></li>
+      <li><a href="evaluation.html">Evaluation</a></li>
     </ul>
   </div>
-#+END_HTML
+#+END_EXPORT
+
+
 * COMMENT Use as a template
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: activity
@@ -97,16 +99,16 @@
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
 :END:
-- Do some online research and reading about zero sum games. Write a report with at least 200 words and must include the following:
-  1. What are zero sum games?
-  2. Find two examples of zero sum games and EXPLAIN why they are zero sum games.
+- Do some online research and reading about real life examples of non zero-sum games. Write a report with at least 200 words and must include the following:
+  1. Two examples of real life non zero-sum games.
+  2. An explanation of why the examples *are* non zero-sum.
 
 ** Homework 2
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
 :END:
 
-- Game theory analyzes competitive situations to determine possible, probable, and optimal outcomes. One way to illustrate all possible outcomes for the prisoner's dilemma is the =payoff bimattrix=, as shown below:
+- Game theory analyzes competitive situations to determine possible, probable, and optimal outcomes. One way to illustrate all possible outcomes for the prisoner's dilemma is the =payoff matrix=, as shown below:
    [[./img/prisoners_dilemma.png]]
 Using the prisoner's dilemma as an example and at least 200 words to explain:
   1. what a =dominant strategy= is
@@ -143,5 +145,5 @@ What prices would the bars select?
 | B      |              |              |              |              |
 |--------+--------------+--------------+--------------+--------------|
 
-- Task 1: Copy and Paste the above table and finish the payoff bimatrix.
+- Task 1: Copy and Paste the above table and finish the payoff matrix.
 - Task 2: Identify the prices for both pubs that is Nash Equilibrium and explain why.

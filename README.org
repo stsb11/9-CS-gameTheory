@@ -1,5 +1,5 @@
-* Touring Turing
-- A 7 lesson course to teach basic Python concepts to students.
+* Game Theory
+- A 6 lesson unit to teach Game Theory topics to Year 9 students.
 - Source files in org-mode in source directory if you wish to edit and submit a pull request.
 - Please don't edit the html directly, it'll just get overwritten on export.
 - Scheme can be viewed at [[https://bournetocode.com/projects/7-CS-Turing/index.html][Bourne To Code]]
