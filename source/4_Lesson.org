@@ -5,10 +5,10 @@
 #+HTML_HEAD_EXTRA: <script src="js/navbar.js" type="text/javascript"></script>
 #+OPTIONS: f:nil author:nil num:nil creator:nil timestamp:nil toc:nil html-style:nil
 
-#+TITLE: Ultimatum, Dictator and bargaining games
-#+AUTHOR: Paul Dougall
+#+TITLE: The Monty Hall Problem and Ultimatum
+#+AUTHOR: James Brown
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
   <div class="github-fork-ribbon-wrapper left">
     <div class="github-fork-ribbon">
       <a href="https://github.com/stsb11/9-CS-gameTheory">Fork me on GitHub</a>
@@ -24,7 +24,8 @@
       <li><a href="assessment.html">Assessment</a></li>
     </ul>
   </div>
-#+END_HTML
+#+END_EXPORT
+
 * COMMENT Use as a template
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: activity
