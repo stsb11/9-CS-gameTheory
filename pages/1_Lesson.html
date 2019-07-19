@@ -3,9 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title>Game Theory</title>
-<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta  name="generator" content="Org-mode" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Intro to Game Theory</title>
+<meta name="generator" content="Org mode" />
 <link rel="stylesheet" type="text/css" href="css/styles.css"/>
 <link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
@@ -15,7 +16,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2013 Free Software Foundation, Inc.
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -59,11 +60,11 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">Game Theory</h1>
-  <div class="github-fork-ribbon-wrapper left">
-    <div class="github-fork-ribbon">
-      <a href="https://github.com/stsb11/7-CS-gameTheory">Fork me on GitHub</a>
-    </div>
+<h1 class="title">Intro to Game Theory</h1>
+  <div class="ribbon">
+
+      <a href="https://github.com/digixc/9-CS-gameTheory">Fork me on GitHub</a>
+
   </div>
 <div id="stickyribbon">
     <ul>
@@ -72,294 +73,159 @@ for the JavaScript code in this tag.
       <li><a href="3_Lesson.html">Week3</a></li>
       <li><a href="4_Lesson.html">Week4</a></li>
       <li><a href="5_Lesson.html">Week5</a></li>
-      <li><a href="assessment.html">Assessment</a></li>
+      <li><a href="evaluation.html">Evaluation</a></li>
     </ul>
   </div>
-<div id="outline-container-sec-1" class="outline-2 activity">
-<h2 id="sec-1">Introduction</h2>
-<div class="outline-text-2" id="text-1">
+<div id="underlay" onclick="underlayoff()">
 </div>
-<div id="outline-container-sec-1-1" class="outline-3 learn">
-<h3 id="sec-1-1">Learn It</h3>
-<div class="outline-text-3" id="text-1-1">
+<div id="overlay" onclick="overlayoff()">
+</div>
+<div id=overlayMenu>
+<p onclick="overlayon('hsla(0, 0%, 50%, 0.5)')">Grey overlay</p>
+<p onclick="underlayon('hsla(300,100%,50%, 0.3)')">Pink</p>
+<p onclick="underlayon('hsla(80, 90%, 40%, 0.4)')">Green</p>
+<p onclick="underlayon('hsla(240,100%,50%,0.2)')">Blue</p>
+<p onclick="underlayon('hsla(40,100%,50%,0.3)')">Cream</p>
+<p onclick="underlayon('hsla(300,100%,40%,0.3)')">Liliac</p>
+<p onclick="underlayon('hsla(300,100%,25%,0.3)')">Purple</p>
+<p onclick="underlayon('hsla(60,100%,50%,0.3)')">Yellow</p>
+</div>
+
+<div id="outline-container-org75aabe2" class="outline-2 objectives">
+<h2 id="org75aabe2">Objectives</h2>
+<div class="outline-text-2" id="text-org75aabe2">
+</div>
+<div id="outline-container-org3d65689" class="outline-3 learn">
+<h3 id="org3d65689">Developing <b>Information Technology</b>, <b>Programming and Development</b> and <b>Literacy</b> learning strands, specifically:</h3>
+<div class="outline-text-3" id="text-org3d65689">
 <ul class="org-ul">
-<li>Game theory has a lot of uses; it's not just for playing games. Today we're going to use it to create and play a game. 
-</li>
-<li>We are going to learn about a concept called <b>backward induction</b> to solve <b><a href="https://en.wikipedia.org/wiki/Zero-sum_game">zero-sum games</a></b>.
-</li>
-<li>Backward induction is the process of reasoning backwards in time, from the end of a problem or situation, to determine a sequence of optimal actions. It proceeds by first considering the last time a decision might be made and choosing what to do in any situation at that time. Using this information, one can then determine what to do at the second-to-last time of decision. This process continues backwards until one has determined the best action for every possible situation (i.e. for every possible information set) at every point in time.
-</li>
-<li>To start you off, consider this puzle&#x2026;
-</li>
+<li>Researching information and collecting and presenting data.</li>
+<li>Investigate the background and context of a specific information technology.</li>
+<li>Explains and justifies how the use of technology impacts on society, from the perspective of social, economical, political, legal, ethical and moral issues.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org192139b" class="outline-2 activity">
+<h2 id="org192139b">Intro to Game Theory</h2>
+<div class="outline-text-2" id="text-org192139b">
+</div>
+<div id="outline-container-orgf72c681" class="outline-3 try">
+<h3 id="orgf72c681">Try It</h3>
+<div class="outline-text-3" id="text-orgf72c681">
+<ul class="org-ul">
+<li>Go to playtictactoe.org and click the 1P button in the bottom right to be able to play with the person next to you. Make sure to switch who goes 1st each time you play.</li>
 </ul>
 
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/N5vJSNXPEwA" frameborder="0" allowfullscreen>
-</iframe>
+<div class="figure">
+<p><img src="./img/noughtsscreenshot.png" alt="noughtsscreenshot.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Play 5 games and see if there’s a certain strategy that both you and your opponent seem to keep on using.</li>
+<li>Open a Word document and write a few sentences on what strategy you ended up using and why you used it. Did this strategy let you win every time or not?</li>
+</ul>
 </div>
 </div>
 
-<div id="outline-container-sec-1-2" class="outline-3 research">
-<h3 id="sec-1-2">Research It</h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-org554218e" class="outline-3 learn">
+<h3 id="org554218e">Learn It</h3>
+<div class="outline-text-3" id="text-org554218e">
+<ul class="org-ul">
+<li>Game theory is used by computer scientists, mathematicians and economists to try and see how rational humans would behave in certain scenarios.</li>
+<li>In the games you are going to learn about, try and remember that humans are <b>not</b> always rational and so when you play these games with your class the results may not be what you expect or what the theory tells you should happen.</li>
+<li>One of the most interesting conclusions reached in game theory is that rational actions by both players can result in situations in which both players are worse off. Weird right?</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org18d0e94" class="outline-3 research">
+<h3 id="org18d0e94">Research It</h3>
+<div class="outline-text-3" id="text-org18d0e94">
 
 <div class="figure">
 <p><img src="img/jvn.gif" alt="jvn.gif" />
 </p>
 </div>
 <ul class="org-ul">
-<li><i>(Picture courtesy of Wikipedia)</i>
-</li>
-<li>A lot of these types of games were used by John von Neumann. Conduct some research online to see why von Neuman is important in the field of Computer Science as well as in Game Theory. 
-</li>
+<li><i>(Picture courtesy of Wikipedia)</i></li>
+<li>Games have appeared throughout history, and in many different cultures, as a form of entertainment and education. It was not until the mid-1920s that the field of game theory was properly founded by the multi-talented Hungarian mathematician and physicist, John von Neumann.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-1-3" class="outline-3 try">
-<h3 id="sec-1-3">Try It</h3>
-<div class="outline-text-3" id="text-1-3">
-<ul class="org-ul">
-<li>"Nim" is an ancient two-player game played with sticks or stones. The objects are divided into piles. 
-</li>
-<li>The players alternate turns. 
-</li>
-<li>On each player's turn they may remove any number of sticks from one of the piles, up to the number of sticks remaining in that pile; but they can only take from a single pile on a given turn. 
-</li>
-<li>The goal is to take the last stick, making you the winner. 
-</li>
-<li>The strategy element is to make the other person clear out all but one pile, so you can take all the sticks in that last pile.
-</li>
-</ul>
 
-
+<div id="outline-container-orgc4f7432" class="outline-3 silver">
+<h3 id="orgc4f7432">Badge It - Silver</h3>
+<div class="outline-text-3" id="text-orgc4f7432">
+</div>
+<div id="outline-container-org05e5ac9" class="outline-4">
+<h4 id="org05e5ac9">Learning Strand: <b>Literacy</b></h4>
+<div class="outline-text-4" id="text-org05e5ac9">
 <ul class="org-ul">
-<li>To illustrate the basic theoretical idea behind the Nim strategy, let's first look at a simpler version of the game called "21". 
-</li>
-<li>Imagine there are 21 sticks in a pile. 
-</li>
-<li>The rules are: You can take one, two, or three sticks on your turn.
-</li>
-<li>Whoever takes the last stick on their turn wins.
-</li>
-<li>Have a few goes here against the computer (click the green flag to restart):
-</li>
-</ul>
-<iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/86810467/?autostart=true" frameborder="0" allowfullscreen>
-</iframe>
-
-<ul class="org-ul">
-<li>If the computer goes first, it will always win. 
-</li>
-<li>Can you find the winning strategy? 
-</li>
+<li>Research more about von Neumann, what else did he discover and get involved with during his very eventful life? Write a paragraph of your findings in your word document.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-1-4" class="outline-3 design">
-<h3 id="sec-1-4">Design It</h3>
-<div class="outline-text-3" id="text-1-4">
+</div>
+
+<div id="outline-container-org2616bc2" class="outline-3 learn">
+<h3 id="org2616bc2">Learn It</h3>
+<div class="outline-text-3" id="text-org2616bc2">
 <ul class="org-ul">
-<li>You're going to make your own version of Nim for two human players. 
-</li>
-<li>We start with a high-level plan; this is written in pseudocode to help work out the sequence of instructions we'll need to code before we start.
-</li>
-<li>The premise is this:
-<ul class="org-ul">
-<li>Store the number of <b>sticks</b> and which <b>player</b>'s turn it is.
-</li>
-<li>LOOP UNTIL THERE ARE NO STICKS LEFT:
-<ul class="org-ul">
-<li>The current <b>player</b> makes a move.
-</li>
-<li>Change the current player.
-</li>
-<li>Output how many sticks remain.
-</li>
+<li>Zero-sum games are games in which one player's loss is exactly equal to another player's gain. If you win a hand at poker, your winnings will add up to the sum of your opponents' losses. At the end of the day, poker players (as a group) are no wealthier or poorer than when they started.</li>
+<li>Not all situations in life, or game theory, are zero-sum situations, however. In an arms race, nations compete to build the most destructive weapons possible. This is a situation in which there are many outcomes that leave all "players" worse off than when they started. If they invest heavily in weapons, but then never use them, they have squandered a good deal of their resources and are poorer for it. Also, if the nations use their weapons and go to war, there is much squandering of resources and life, and all are worse off than before.</li>
+<li>We'll cover these situations next lesson.</li>
 </ul>
-</li>
-<li>When the sticks have run out, announce the winner.
-</li>
-</ul>
-</li>
-</ul>
+</div>
+</div>
 
-
+<div id="outline-container-org164d1f5" class="outline-3 gold">
+<h3 id="org164d1f5">Badge It - Gold</h3>
+<div class="outline-text-3" id="text-org164d1f5">
+</div>
+<div id="outline-container-org12b2f3b" class="outline-4">
+<h4 id="org12b2f3b">Learning Strand: <b>Information Technology</b></h4>
+<div class="outline-text-4" id="text-org12b2f3b">
 <ul class="org-ul">
-<li>We can write out some pseudocode to help us think about how we'd write out program.
-</li>
+<li>Find three more examples of zero-sum games and explain why they are zero-sum. Write this in your word file.</li>
 </ul>
-<pre class="example">
-sticks=21
-player=1
+</div>
+</div>
+</div>
 
-LOOP UNTIL sticks&lt;1:
-    The current &lt;player&gt; makes a move.
-    Change the current player.
-    PRINT How many sticks remain.
-END LOOP
-
-PRINT Winner
-</pre>
-
+<div id="outline-container-orge657fdf" class="outline-3 learn">
+<h3 id="orge657fdf">Learn It</h3>
+<div class="outline-text-3" id="text-orge657fdf">
 <ul class="org-ul">
-<li>Open <b>&gt;&gt;</b> <a href="https://scratch.mit.edu/projects/86929754/#editor">this</a> <b>&lt;&lt;</b> Scratch link in a new tab. If you've a Scratch account, you can log into it at this point. If you've not got one (or can't remember your password), you can always use the 'File -&gt; Download to your Computer' link in the top left-hand corner when you've finished your work. You've now got the pseudocode above all set out.
-</li>
+<li>Cake division is a very simple zero-sum game, modelled with a 2 x 2 payoff matrix.</li>
+<li>A matrix is an array of numbers, symbols or expressions arranged in rows and columns.</li>
+<li>If each player is greedy, we assume that each will choose the strategy with the best worst-case scenario. That means the best bad thing we can do.</li>
+<li>Balance is reached when both players have no reason or incentive to change their strategy, this means they have the “best” strategy available.</li>
+<li>Two children at a party want the last bit of cake, if one child gets it, the other will be annoyed. This problem can be avoided by letting one child cut the cake and letting the other have first choice of the pieces.</li>
+<li>In this game, the cake cutter has two choices, cut evenly or cut unevenly. The chooser can only choose the piece they think is larger or the one that seems smaller.</li>
 </ul>
 
 <div class="figure">
-<p><img src="./img/w1_1.png" alt="w1_1.png" />
+<p><img src="./img/cake_matrix.png" alt="cake_matrix.png" />
 </p>
 </div>
 <ul class="org-ul">
-<li>Because we broke all the main coding ideas out into blocks (called functions when coding), this keeps the main program clean and easy to read.
-</li>
-<li>If you try playing the game, you'll see there are a few issues.
-<ul class="org-ul">
-<li>It's always player 1's turn
-</li>
-<li>The game doesn't tell you who's won; it just stops.
-</li>
-<li>You can take 1, 2, 3, -2, 100&#x2026; sticks each time.
-</li>
-</ul>
-</li>
-<li>We now need to define the different function blocks to make the program work. 
-</li>
-<li>If you're feeling ambitious, you could eventually implement an AI to play against once you get the two-player version working. 
-</li>
+<li>For example, if the cutter chooses to cut evenly and the chooser chooses the larger piece, then the cutter will get “half minus a crumb” and the chooser will get “half plus a crumb,”</li>
+<li>Cutting the cake unevenly creates the possibility of getting the larger piece, but the chooser will then nab the bigger piece.</li>
+<li>If the cutter chooses to cut evenly, however, their maximum payoff is about half of the cake, and their minimum payoff is also about half of the cake. So, of the cutter’s two choices, the one that has the least downside is the one they should choose. Consequently, in this situation, they should choose to cut the piece of cake evenly.</li>
+<li>The chooser seeks to do the same thing, make the choice that maximizes her benefit. In this case, if the cutter cuts evenly, the chooser’s best option is to pick the “half plus a crumb.” Notice that even though both children implement their best strategy, one still comes out slightly advantaged over the other. ”Games do not have to be fair”</li>
+<li>This is a zero sum game because whatever cake one person doesn’t get, the other does get.</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-sec-1-5" class="outline-3 code">
-<h3 id="sec-1-5">Code It: Switch player</h3>
-<div class="outline-text-3" id="text-1-5">
+<div id="outline-container-orge8e858c" class="outline-3 platinum">
+<h3 id="orge8e858c">Badge It - Platinum</h3>
+<div class="outline-text-3" id="text-orge8e858c">
 <ul class="org-ul">
-<li>We have a variable called 'player'. Let's use this to store either a 1 or a 2 depending on who's turn it is. 
-</li>
-<li>We need to change the player from 1 to 2 once player 1 has made his/her move.
-</li>
-<li>We also need to set the player back to 1 once player 2 makes their move.
-</li>
-<li>Therefore the code in the 'define Switch Player' block needs to be:
-</li>
-</ul>
-<pre class="example">
-IF player = 1:
-   player = 2
-ELSE:
-   player = 1
-END IF
-</pre>
-
-<ul class="org-ul">
-<li><b>Task:</b> Write the code in Scratch to define this function, using the algorithm shown above. 
-</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-sec-1-6" class="outline-3 code">
-<h3 id="sec-1-6">Code It: Making a move</h3>
-<div class="outline-text-3" id="text-1-6">
-<ul class="org-ul">
-<li>What is a valid move? The player can pick either 1,2 or 3. 
-</li>
-<li>People tend to make mistakes (or try and cheat) though, so we need to include a little 'data validation' to ensure the player is making a valid move.
-</li>
-<li>Our 'Make a move' algorithm is currently:
-</li>
-</ul>
-<pre class="example">
-answer &lt;-- INPUT "Player &lt;player&gt;'s turn..."
-sticks = sticks - answer
-</pre>
-
-<ul class="org-ul">
-<li>The code in Scratch looks like this:
-</li>
-</ul>
-
-<div class="figure">
-<p><img src="./img/w1_2.png" alt="w1_2.png" />
-</p>
-</div>
-<ul class="org-ul">
-<li>We need to improve this to&#x2026;
-</li>
-</ul>
-
-<pre class="example">
-valid_move = False
-
-REPEAT WHILE valid_move = False
-    answer &lt;-- INPUT "Player &lt;player&gt;'s turn..."
-    IF answer&gt;0 AND answer&lt;4 THEN:
-        valid_move = True
-        sticks = sticks - answer
-    ELSE:
-        PRINT "Invalid move. Try again."
-    ENDIF
-
-END REPEAT
-</pre>
-
-<ul class="org-ul">
-<li><b>Task:</b> Write the code to only allow valid moves.
-</li>
-<li><i>Tip:</i> You'll need to start by creating a 'valid move' variable.
-</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-sec-1-7" class="outline-3 code">
-<h3 id="sec-1-7">Code It: Establish the winner</h3>
-<div class="outline-text-3" id="text-1-7">
-<ul class="org-ul">
-<li>The main loop of the program continues until the last stick is removed (i.e. the 'stick' variable goes below 1). 
-</li>
-<li>When this happens, we need to show a message to say that either player 1 or 2 is the winner.
-</li>
-</ul>
-<pre class="example">
-IF player=1 THEN:
-    PRINT "Player 2 wins"
-ELSE:
-    PRINT "Player 1 wins"
-ENDIF
-</pre>
-<ul class="org-ul">
-<li><b>Task:</b> Code this in your script.
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-1-8" class="outline-3 learn">
-<h3 id="sec-1-8">Learn It</h3>
-<div class="outline-text-3" id="text-1-8">
-<ul class="org-ul">
-<li>By using the rules, we can write an AI that always wins. In game theory, a "no-win" situation is one in which no player benefits from any outcome. This may be because of any or all of the following:
-<ul class="org-ul">
-<li>Unavoidable or unforeseeable circumstances causing the situation to change after decisions have been made. This is common in Text adventures
-</li>
-<li><i>Zugzwang</i>, as in chess, when any move a player chooses makes him worse off than before but the rules of chess means they have to move.
-</li>
-<li>A situation in which the player has to accomplish two mutually dependent tasks each of which must be completed before the other or that are mutually exclusive (<a href="https://en.wikipedia.org/wiki/Catch-22_(logic)">a Catch-22</a>).
-</li>
-<li>Ignorance of other players' actions, meaning the best decision for all differs from that for any one player (as in the Prisoner's Dilemma).
-</li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-1-9" class="outline-3 badge">
-<h3 id="sec-1-9">Badge It</h3>
-<div class="outline-text-3" id="text-1-9">
-<ul class="org-ul">
-<li>You will submit your work from this task in the next lesson to collect your badges.
-</li>
+<li>To get your Platinum badge for this week you need to create your own version of a zero-sum game. Use the Cake division game as an example and create a new scenario to base it off.</li>
+<li>Create your own payoff matrix too using the table tools in Word.</li>
+<li>It can use any decision that leads to a zero-sum outcome.</li>
 </ul>
 </div>
 </div>

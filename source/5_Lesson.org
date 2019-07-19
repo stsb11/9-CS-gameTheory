@@ -6,24 +6,38 @@
 #+OPTIONS: f:nil author:nil num:nil creator:nil timestamp:nil toc:nil html-style:nil
 
 #+TITLE: Modelling Money
-#+AUTHOR: Paul Dougall
+#+AUTHOR: Xiaohui Ellis
 
 #+BEGIN_EXPORT html
-  <div class="github-fork-ribbon-wrapper left">
-    <div class="github-fork-ribbon">
+ <div class="ribbon">
       <a href="https://github.com/stsb11/9-CS-gameTheory">Fork me on GitHub</a>
     </div>
-  </div>
+
 <div id="stickyribbon">
     <ul>
       <li><a href="1_Lesson.html">Week1</a></li>
       <li><a href="2_Lesson.html">Week2</a></li>
       <li><a href="3_Lesson.html">Week3</a></li>
-      <li><a href="4_Lesson.html">Week4</a></li> 
-      <li><a href="5_Lesson.html">Week5</a></li> 
+      <li><a href="4_Lesson.html">Week4</a></li>
+      <li><a href="5_Lesson.html">Week5</a></li>
       <li><a href="evaluation.html">Evaluation</a></li>
     </ul>
   </div>
+
+<div id="underlay" onclick="underlayoff()">
+</div>
+<div id="overlay" onclick="overlayoff()">
+</div>
+<div id=overlayMenu>
+<p onclick="overlayon('hsla(0, 0%, 50%, 0.5)')">Grey overlay</p>
+<p onclick="underlayon('hsla(300,100%,50%, 0.3)')">Pink</p>
+<p onclick="underlayon('hsla(80, 90%, 40%, 0.4)')">Green</p>
+<p onclick="underlayon('hsla(240,100%,50%,0.2)')">Blue</p>
+<p onclick="underlayon('hsla(40,100%,50%,0.3)')">Cream</p>
+<p onclick="underlayon('hsla(300,100%,40%,0.3)')">Liliac</p>
+<p onclick="underlayon('hsla(300,100%,25%,0.3)')">Purple</p>
+<p onclick="underlayon('hsla(60,100%,50%,0.3)')">Yellow</p>
+</div>
 #+END_EXPORT
 * COMMENT Use as a template
 :PROPERTIES:
