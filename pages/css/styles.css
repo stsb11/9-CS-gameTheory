@@ -122,10 +122,10 @@ h1 {
 }
 /* added to avoid using default link style */
 .activity a:link {
-  color: #FFFFFF;
+  color: #737373;
 }
 .activity a:visited {
-  color: #FFFFFF;
+  color: #737373;
 }
 .activity a:hover {
   color: #808080;

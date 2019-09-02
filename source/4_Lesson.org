@@ -114,9 +114,9 @@
 :HTML_CONTAINER_CLASS: document
 :END:
 - Watch the video.
-#+BEGIN_HTML 
+#+BEGIN_EXPORT html 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/mhlc7peGlGg" frameborder="0" allowfullscreen></iframe>
-#+END_HTML
+#+END_EXPORT
 - Open a text editor and answer the following questions:
 - What is the problem?
 - Should you swap, stick with your choice or does it make no difference?
@@ -137,9 +137,9 @@
 - Firstly lets think about the pseudocode
 [[./img/1_sshot.JPG]]
 - The code for the Ultimatum game is shown in the Trinket below:
-#+BEGIN_HTML 
+#+BEGIN_EXPORT html 
 <iframe src="https://trinket.io/embed/python/c1986a151a" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
-#+END_HTML
+#+END_EXPORT
 ** Try It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: try

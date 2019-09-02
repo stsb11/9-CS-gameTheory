@@ -119,9 +119,9 @@
 
 - Watch the video...
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 <iframe width="560" height="315" src="https://www.youtube.com/embed/a2ey9a70yY0" frameborder="0" allowfullscreen></iframe>
-#+END_HTML
+#+END_EXPORT
 
 - Were you correct?
 - What was the correct answer? 

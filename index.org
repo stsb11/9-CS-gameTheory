@@ -7,11 +7,11 @@
 
 
 #+BEGIN_EXPORT html
-<div class="github-fork-ribbon-wrapper left">
-    <div class="github-fork-ribbon">
-        <a href="https://github.com/digixc/9-CS-gameTheory">Fork me on GitHub</a>
-    </div>
-</div>
+ <div class="ribbon">
+
+      <a href="https://github.com/digixc/9-CS-gameTheory">Fork me on GitHub</a>
+
+  </div>
 #+END_EXPORT
 
 * [[file:pages/1_Lesson.html][Week 1 - Welcome to Game Theory]]

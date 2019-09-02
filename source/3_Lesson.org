@@ -215,20 +215,20 @@
 - Now we've a general plan, let's get started...
 
 - *Step 1:* Make a function to convert denary to binary. A quick Google search tells us that Python has a built-in function to handle this.
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 <iframe src="https://trinket.io/embed/python/407337d485" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
-#+END_HTML
+#+END_EXPORT
 
 - *Step 2:* =XOR= function. Google to the rescue again; Python also has some built-in functions to do the =XOR= operation for us, by using the =bin(a ^ b)= function. 
 - Our code now can be updated to include this new functionality...
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 <iframe src="https://trinket.io/embed/python/fc8c6c1b62" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
-#+END_HTML
+#+END_EXPORT
 - *Step 3:* Once we know this information, we can calculate which pile to remove sticks from, and how many to take. 
 - The Trinket below shows a solution for a 3-pile game. You can use this to complete up to level 4 on the [[http://www.transum.org/Software/Nim/][online Nim game]].
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 <iframe src="https://trinket.io/embed/python/d56d877bbd?start=result" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
-#+END_HTML
+#+END_EXPORT
 ** Research It
 :PROPERTIES:
 
