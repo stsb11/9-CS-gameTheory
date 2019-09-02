@@ -8,11 +8,11 @@
 #+TITLE: Game Theory Homework
 #+AUTHOR: Xiaohui Ellis
 #+BEGIN_EXPORT html
-  <div class="github-fork-ribbon-wrapper left">
-    <div class="github-fork-ribbon">
+
+    <div class="ribbon">
       <a href="https://github.com/digixc/9-CS-GameTheory">Fork me on GitHub</a>
     </div>
-  </div>
+
 <div id="stickyribbon">
     <ul>
       <li><a href="1_Lesson.html">Week1</a></li>

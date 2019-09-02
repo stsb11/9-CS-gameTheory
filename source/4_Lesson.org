@@ -189,21 +189,21 @@
 :END:
 ** Badge It: Silver
 :PROPERTIES:
-:HTML_CONTAINER_CLASS: badge
+:HTML_CONTAINER_CLASS: silver
 :END:
 - Complete the code for the Prisoner's dilemma game (week 3) in Scratch. Upload a screenshot of the code.
 - *OR...*
 - Modify the Trinket code to work as the Dictator game, and upload a screenshot of it running.
 ** Badge It: Gold
 :PROPERTIES:
-:HTML_CONTAINER_CLASS: badge
+:HTML_CONTAINER_CLASS: gold
 :END:
 - In the Prisoner's Dilemma, modify the cat's strategy to be an 'angel'. It always stays silent, and never betrays the human player. Screenshot the code block that sets this strategy and upload it. Develop a second, 'Unpredictable puss' strategy for the cat, so that it betrays or stays silent at random. Screenshot this, and upload it too.
 - *OR...*
 - Modify the code to create the bargaining game. Upload a screenshot of it running to collect the badge.
 ** Badge It: Platinum
 :PROPERTIES:
-:HTML_CONTAINER_CLASS: badge
+:HTML_CONTAINER_CLASS: platinum
 :END:
 - For the Prisoner's dilemma program, modify the cat's strategy so that it holds a grudge…
 - It will remain silent every time the game is played, until the human player betrays, then…
