@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>The Language Game</title>
+<title>The Winning Game</title>
 <meta name="generator" content="Org mode" />
 <link rel="stylesheet" type="text/css" href="css/styles.css"/>
 <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
@@ -60,7 +60,7 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">The Language Game</h1>
+<h1 class="title">The Winning Game</h1>
 
     <div class="ribbon">
       <a href="https://github.com/stsb11/9-CS-gameTheory">Fork me on GitHub</a>
@@ -73,6 +73,7 @@ for the JavaScript code in this tag.
       <li><a href="3_Lesson.html">Week3</a></li>
       <li><a href="4_Lesson.html">Week4</a></li>
       <li><a href="5_Lesson.html">Week5</a></li>
+      <li><a href="homework.html">Homework</a></li>
       <li><a href="evaluation.html">Evaluation</a></li>
     </ul>
   </div>
@@ -93,314 +94,88 @@ for the JavaScript code in this tag.
 <p onclick="underlayon('hsla(60,100%,50%,0.3)')">Yellow</p>
 </div>
 
-<div id="outline-container-orgd66d72a" class="outline-2 activity">
-<h2 id="orgd66d72a">Introduction</h2>
-<div class="outline-text-2" id="text-orgd66d72a">
+<div id="outline-container-orge446ab9" class="outline-2 activity">
+<h2 id="orge446ab9">Nash Equilibrium and Dominant Strategy</h2>
+<div class="outline-text-2" id="text-orge446ab9">
 </div>
-<div id="outline-container-orgde8288c" class="outline-3 document">
-<h3 id="orgde8288c">Document It</h3>
-<div class="outline-text-3" id="text-orgde8288c">
-<ul class="org-ul">
-<li>Watch the video&#x2026;</li>
-</ul>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/7yDmGnA8Hw0" frameborder="0" allowfullscreen></iframe>
 
+<div id="outline-container-orge233c40" class="outline-3 learn">
+<h3 id="orge233c40">Recap - Zero-sum game and Pay-off matrix</h3>
+<div class="outline-text-3" id="text-orge233c40">
 <ul class="org-ul">
-<li>Write an algorithm to solve the bridge riddle. You need to get everyone, in pairs, across in 17 minutes before the zombies get you.</li>
+<li>A game is called <code>zero-sum</code> if the sum of payoffs equals zero for any outcome. That means that the winnings of the winning players are paid by the losses of the losing players. EXAMPLEs of a zero-sum games include poker, rock-paper-scissors and tennis.</li>
+<li>Game theory attempts to determine mathematically and logically the actions that “players” should take to secure the best outcomes for themselves in a wide array of “games.”</li>
+<li>A <code>Payoff matrix</code> is a table used to illustrate the player moves and the outcomes with each possible moves.</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgd1df04b" class="outline-3 learn">
-<h3 id="orgd1df04b">Learn It</h3>
-<div class="outline-text-3" id="text-orgd1df04b">
+
+<div id="outline-container-org0133856" class="outline-3 try">
+<h3 id="org0133856">Learn It - payoff matrix in real life example</h3>
+<div class="outline-text-3" id="text-org0133856">
 <ul class="org-ul">
-<li>Recap - "Nim" is a two-player game played with sticks or stones. The objects are divided into piles.</li>
-<li>The players alternate turns. On each player's turn they may remove any number of sticks from one of the piles, up to the number of sticks remaining in that pile; but they can only take from a single pile on a given turn.</li>
-<li>The goal is to take the last stick. Whoever takes the last stick wins.</li>
-<li>So the goal is to make the other person clear out all but one pile, so  you can take all the sticks in that last pile. Etc.</li>
-
-<li>Let's play a game starting from the game state 1, 4, 7. You can go first.</li>
-
-<li>How many sticks are you going to take and from which pile?
-
-<ol class="org-ol">
-<li>XX      (1 sticks)</li>
-<li>XXXX    (4 sticks)</li>
-<li>XXXXXXX (7 sticks)</li>
-</ol></li>
+<li>Considering  two toy companies, A and B.  Their profits depending on their decisions on advertising or not.</li>
+<li>The <code>payoff matrix</code> of their decisions is as following:
+<a href="./img/payoff-mtarix-advertising.png/">./img/payoff-mtarix-advertising.png/</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgdc7db58" class="outline-3 try">
-<h3 id="orgdc7db58">Try It</h3>
-<div class="outline-text-3" id="text-orgdc7db58">
+<div id="outline-container-orgd24b3bb" class="outline-3 learn">
+<h3 id="orgd24b3bb">Learn It:  Nash Equilibrium</h3>
+<div class="outline-text-3" id="text-orgd24b3bb">
 <ul class="org-ul">
-<li>Click on the link to play the game <a href="http://www.transum.org/Software/Nim/">http://www.transum.org/Software/Nim/</a></li>
-<li>How did you win this time?</li>
-<li>Is it the same algorithm to win?</li>
+<li>Suppose two cars are driving towards a junction from perpendicular directions</li>
+<li>The light is green for one and red for the other</li>
+<li>If the police would not ticket the drivers, would they want to break the law?</li>
+<li>To help you understand this scenario and possible outcomes, lets watch a short 4 minutes video:</li>
+</ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jILgxeNBK_8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<ul class="org-ul">
+<li><code>A Nash Equilibrium</code> is a law that no one would want to break even in the absence of external force such as police in the traffic light example or in the ice cream example</li>
+<li>Formally, <code>Nash Equilibrium</code> is a set of strategies for each player where the optimal outcome of a game is where there is no incentive for any players to change their initial strategy given what other players are doing.</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org90e0752" class="outline-3 document">
-<h3 id="org90e0752">Document It</h3>
-<div class="outline-text-3" id="text-org90e0752">
+<div id="outline-container-org6b26b7b" class="outline-3 silver">
+<h3 id="org6b26b7b">Badge It Silver</h3>
+<div class="outline-text-3" id="text-org6b26b7b">
 <ul class="org-ul">
-<li>Save your certificate/s to show how many levels you passed on the NIM game in <b>5 minutes</b>.</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org6ebe2b8" class="outline-3">
-<h3 id="org6ebe2b8">Learn It: Strategy</h3>
-<div class="outline-text-3" id="text-org6ebe2b8">
-<p>
-
-</p>
-
-<p>
-:HTML<sub>CONTAINER</sub><sub>CLASS</sub>: learn
+<li><p>
+create a payoff matrix for the following scenario:
 </p>
 <ul class="org-ul">
-<li>There is a known winning strategy to playing 'Advanced NIM'. Let's use a simple example to illustrate how to use this strategy.</li>
-<li>Let's say you have three piles with 1, 4 and 7 stones:
+<li>Two cars are meeting at an intersection and want to proceed as indicated by the arrows in Figure shown below.
+<img src="./img/TwoCars-Crossing.png" alt="TwoCars-Crossing.png" /></li>
+</ul>
 <ul class="org-ul">
-<li>X</li>
-<li>XXXX</li>
-<li>XXXXXXX</li>
+<li>Each player can proceed or move. If both proceed, there is an accident. A would have a payoff of 100 in this case, and B a payoff of 1000 (since B would be made responsible for the accident, since A has the right of way). If one yields and the other proceeds, the one yielding has a payoff of 5, and the other one of 5. If both yield, it takes a little longer until they can proceed, so both have a payoff of 10.</li>
+<li>Analyze this simultaneous game, draw the payoff bimatrix</li>
 </ul></li>
 </ul>
-
-
+</div>
+</div>
+<div id="outline-container-org9b3f02d" class="outline-3 gold">
+<h3 id="org9b3f02d">Badge It Silver - Prisoners' dilemma and Nash equilibrium</h3>
+<div class="outline-text-3" id="text-org9b3f02d">
 <ul class="org-ul">
-<li>To find out the optimal move, we first express the count of each pile as a binary number, using this table:</li>
-</ul>
-
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-
-<colgroup>
-<col  class="org-right" />
-
-<col  class="org-right" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-right">Decimal</th>
-<th scope="col" class="org-right">Binary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="org-right">0</td>
-<td class="org-right">0000</td>
-</tr>
-
-<tr>
-<td class="org-right">1</td>
-<td class="org-right">0001</td>
-</tr>
-
-<tr>
-<td class="org-right">2</td>
-<td class="org-right">0010</td>
-</tr>
-
-<tr>
-<td class="org-right">3</td>
-<td class="org-right">0011</td>
-</tr>
-
-<tr>
-<td class="org-right">4</td>
-<td class="org-right">0100</td>
-</tr>
-
-<tr>
-<td class="org-right">5</td>
-<td class="org-right">0101</td>
-</tr>
-
-<tr>
-<td class="org-right">6</td>
-<td class="org-right">0110</td>
-</tr>
-
-<tr>
-<td class="org-right">7</td>
-<td class="org-right">0111</td>
-</tr>
-
-<tr>
-<td class="org-right">8</td>
-<td class="org-right">1000</td>
-</tr>
-
-<tr>
-<td class="org-right">9</td>
-<td class="org-right">1001</td>
-</tr>
-
-<tr>
-<td class="org-right">10</td>
-<td class="org-right">1010</td>
-</tr>
-</tbody>
-</table>
-
-
-<ul class="org-ul">
-<li>Next we perform a special operation on these binary numbers, by following the following process:</li>
-<li>For each column of digits, if there are an even number of 1's, write a zero at the bottom of that column. If there are an odd number, write a one. This is called the <code>Bitwise exclusive or</code> operation.</li>
-</ul>
-
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-
-<colgroup>
-<col  class="org-right" />
-
-<col  class="org-left" />
-
-<col  class="org-left" />
-
-<col  class="org-right" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-right">Pile</th>
-<th scope="col" class="org-left">Sticks</th>
-<th scope="col" class="org-left">Binary</th>
-<th scope="col" class="org-right">Denary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="org-right">1</td>
-<td class="org-left">X</td>
-<td class="org-left"><code>0001</code></td>
-<td class="org-right">1</td>
-</tr>
-
-<tr>
-<td class="org-right">2</td>
-<td class="org-left">XXXX</td>
-<td class="org-left"><code>0100</code></td>
-<td class="org-right">4</td>
-</tr>
-
-<tr>
-<td class="org-right">3</td>
-<td class="org-left">XXXXXXX</td>
-<td class="org-left"><code>0111</code></td>
-<td class="org-right">7</td>
-</tr>
-
-<tr>
-<td class="org-right">&#xa0;</td>
-<td class="org-left"><b>pile-sum:</b></td>
-<td class="org-left"><code>0010</code></td>
-<td class="org-right">2</td>
-</tr>
-</tbody>
-</table>
-
-<ul class="org-ul">
-<li>In the example above, the right-most column has a 1, then a 0, another 1. There are an even number of 1s (two of them), so we write <code>0</code> at the bottom of the column.</li>
-<li>The next column (third from the left) has only one <code>1</code> in it; an odd number. We write a <code>1</code> at the bottom of that column.</li>
-<li>The resulting 4-bit number (0010 in this example) is called the <i>pile-sum</i>.</li>
-</ul>
-
-
-<ul class="org-ul">
-<li>To win, we want to get the pile-sum to total <code>0000</code> after our turn.</li>
-<li>Looking over the numbers above, it looks like if we took the pile-sum away from the third pile, we'd changing a 7 (<code>0111</code> in binary) to a 5 (<code>0101</code> in binary). The pile sum would then be <code>0000</code>.</li>
-<li>On the other player's turn, it now doesn't matter which pile they take from, as long as you reduce the pile sum back to <code>0000</code> on your turn.</li>
-<li>You can now continue this process until you win the game by taking the last stick.</li>
-<li>If your opponent knows the strategy and leaves you with a pile sum of <code>0000</code>, then you will lose, assuming perfect play on their part.</li>
+<li>Explain Nash equilibrium using payoff matrix and Prisoners' dilemma scenario</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org111c92c" class="outline-3 code">
-<h3 id="org111c92c">Code It</h3>
-<div class="outline-text-3" id="text-org111c92c">
+<div id="outline-container-org5a990f2" class="outline-3 platinum">
+<h3 id="org5a990f2">Badge It Platinum</h3>
+<div class="outline-text-3" id="text-org5a990f2">
 <ul class="org-ul">
-<li>This is a lot of mental calculation. It'd be better if we wrote a program in Python to tell us our moves, so that we can <b>always</b> win!</li>
-<li>To write this program, we'll need to take several steps. 
+<li>Conduct some research online and write 200 words on:
 <ul class="org-ul">
-<li>We need the ability to convert the denary numbers into their binary equivalent.</li>
-<li>This will need to ask for the three numbers and convert them into binary.</li>
-<li>We will need to XOR these binary numbers to get the pile sum.</li>
-<li>Finally, we should advise the player of what to do.</li>
+<li>What dominant strategy is</li>
+<li>Find an example of dominant strategy explain how the dominant strategy works in your example.</li>
 </ul></li>
-<li>Now we've a general plan, let's get started&#x2026;</li>
-
-<li><b>Step 1:</b> Make a function to convert denary to binary. A quick Google search tells us that Python has a built-in function to handle this.</li>
-</ul>
-<iframe src="https://trinket.io/embed/python/407337d485" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
-
-<ul class="org-ul">
-<li><b>Step 2:</b> <code>XOR</code> function. Google to the rescue again; Python also has some built-in functions to do the <code>XOR</code> operation for us, by using the <code>bin(a ^ b)</code> function.</li>
-<li>Our code now can be updated to include this new functionality&#x2026;</li>
-</ul>
-<iframe src="https://trinket.io/embed/python/fc8c6c1b62" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
-<ul class="org-ul">
-<li><b>Step 3:</b> Once we know this information, we can calculate which pile to remove sticks from, and how many to take.</li>
-<li>The Trinket below shows a solution for a 3-pile game. You can use this to complete up to level 4 on the <a href="http://www.transum.org/Software/Nim/">online Nim game</a>.</li>
-</ul>
-<iframe src="https://trinket.io/embed/python/d56d877bbd?start=result" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
-</div>
-</div>
-<div id="outline-container-org2507d2e" class="outline-3">
-<h3 id="org2507d2e">Research It</h3>
-<div class="outline-text-3" id="text-org2507d2e">
-<p>
-
-</p>
-
-<ul class="org-ul">
-<li>What is Exclusive Or?</li>
-<li>How do we use it in Computer Science?</li>
-</ul>
-
-<p>
-:HTML<sub>CONTAINER</sub><sub>CLASS</sub>: research
-</p>
-<ul class="org-ul">
-<li>What is Exclusive Or (XOR)?</li>
-<li>How do we use it in Computer Science?</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orge92cf03" class="outline-3 silver">
-<h3 id="orge92cf03">Badge It Silver</h3>
-<div class="outline-text-3" id="text-orge92cf03">
-<ul class="org-ul">
-<li>Write a set of rules for someone who has never played '21' before so that they will always win. You may need to re-read the week 1 notes for this.</li>
-<li><b>OR&#x2026;</b></li>
-<li>Use the helper program to win Nim level 2 on the <a href="http://www.transum.org/Software/Nim/">online Nim game</a>. Upload a screenshot of the victory screen as evidence.</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orgbb5d96e" class="outline-3 gold">
-<h3 id="orgbb5d96e">Badge It Gold</h3>
-<div class="outline-text-3" id="text-orgbb5d96e">
-<ul class="org-ul">
-<li>Write a working two-player game of 21 in Scratch. Upload a screenshot of your code; the week one notes will help.</li>
-<li><b>OR&#x2026;</b></li>
-<li>Modify the code above, so that you can complete level 5 and level 6 of the <a href="http://www.transum.org/Software/Nim/">online Nim</a> game. Upload a screenshot of the level 6 victory screen as evidence, and a seperate screenshot of your code.</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orgf5641ad" class="outline-3 platinum">
-<h3 id="orgf5641ad">Badge It Platinum</h3>
-<div class="outline-text-3" id="text-orgf5641ad">
-<ul class="org-ul">
-<li>Implement a one-player version of '21' Nim in Scratch, so that you can play with a computer opponent. You may wish to look back at the last lesson's notes for hints.</li>
-<li>The computer should randomly choose to play either a 1, 2 or 3.</li>
-<li>Implement a strategy that means the computer will always win when it goes first.</li>
 </ul>
 </div>
 </div>

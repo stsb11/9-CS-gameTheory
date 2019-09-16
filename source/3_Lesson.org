@@ -5,8 +5,8 @@
 #+HTML_HEAD_EXTRA: <script src="js/navbar.js" type="text/javascript"></script>
 #+OPTIONS: f:nil author:nil num:nil creator:nil timestamp:nil toc:nil html-style:nil
 
-#+TITLE: The Language Game
-#+AUTHOR: James Brown
+#+TITLE: The Winning Game
+#+AUTHOR: X Ellis
 
 #+BEGIN_EXPORT html
 
@@ -21,6 +21,7 @@
       <li><a href="3_Lesson.html">Week3</a></li>
       <li><a href="4_Lesson.html">Week4</a></li>
       <li><a href="5_Lesson.html">Week5</a></li>
+      <li><a href="homework.html">Homework</a></li>
       <li><a href="evaluation.html">Evaluation</a></li>
     </ul>
   </div>
@@ -106,157 +107,64 @@
 :HTML_CONTAINER_CLASS: save
 :END:
 
-* Introduction
+* Nash Equilibrium and Dominant Strategy
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: activity
 :END:
-** Document It
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: document
-:END:
-- Watch the video...
 
-#+BEGIN_EXPORT html
-<iframe width="560" height="315" src="https://www.youtube.com/embed/7yDmGnA8Hw0" frameborder="0" allowfullscreen></iframe>
-#+END_EXPORT
 
-- Write an algorithm to solve the bridge riddle. You need to get everyone, in pairs, across in 17 minutes before the zombies get you.
-
-** Learn It
+** Recap - Zero-sum game and Pay-off matrix
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: learn
 :END:
 
-- Recap - "Nim" is a two-player game played with sticks or stones. The objects are divided into piles. 
-- The players alternate turns. On each player's turn they may remove any number of sticks from one of the piles, up to the number of sticks remaining in that pile; but they can only take from a single pile on a given turn. 
-- The goal is to take the last stick. Whoever takes the last stick wins. 
-- So the goal is to make the other person clear out all but one pile, so  you can take all the sticks in that last pile. Etc.
+- A game is called =zero-sum= if the sum of payoffs equals zero for any outcome. That means that the winnings of the winning players are paid by the losses of the losing players. EXAMPLEs of a zero-sum games include poker, rock-paper-scissors and tennis.
+- Game theory attempts to determine mathematically and logically the actions that “players” should take to secure the best outcomes for themselves in a wide array of “games.”  
+- A =Payoff matrix= is a table used to illustrate the player moves and the outcomes with each possible moves.
 
-- Let's play a game starting from the game state 1, 4, 7. You can go first. 
 
-- How many sticks are you going to take and from which pile?
-
- 1. XX      (1 sticks)
- 2. XXXX    (4 sticks)
- 3. XXXXXXX (7 sticks)
-
-** Try It
+** Learn It - payoff matrix in real life example
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: try
 :END:
-- Click on the link to play the game http://www.transum.org/Software/Nim/
-- How did you win this time? 
-- Is it the same algorithm to win?
+- Considering  two toy companies, A and B.  Their profits depending on their decisions on advertising or not.
+- The =payoff matrix= of their decisions is as following:
+  [[./img/payoff-mtarix-advertising.png/]]
 
-** Document It
+** Learn It:  Nash Equilibrium
 :PROPERTIES:
-:HTML_CONTAINER_CLASS: document
-:END:
-- Save your certificate/s to show how many levels you passed on the NIM game in *5 minutes*.
-** Learn It: Strategy
-:PROPERTIES:
-
 :HTML_CONTAINER_CLASS: learn
 :END:
-- There is a known winning strategy to playing 'Advanced NIM'. Let's use a simple example to illustrate how to use this strategy.
-- Let's say you have three piles with 1, 4 and 7 stones:
-   - X
-   - XXXX
-   - XXXXXXX
-  
-
-- To find out the optimal move, we first express the count of each pile as a binary number, using this table:
- 
-| Decimal | Binary |
-|---------+--------|
-|       0 |   0000 |
-|       1 |   0001 |
-|       2 |   0010 |
-|       3 |   0011 |
-|       4 |   0100 |
-|       5 |   0101 |
-|       6 |   0110 |
-|       7 |   0111 |
-|       8 |   1000 |
-|       9 |   1001 |
-|      10 |   1010 |
-
-
-- Next we perform a special operation on these binary numbers, by following the following process:
-- For each column of digits, if there are an even number of 1's, write a zero at the bottom of that column. If there are an odd number, write a one. This is called the =Bitwise exclusive or= operation.
-
-| Pile | Sticks      | Binary | Denary |
-|------+-------------+--------+--------|
-|    1 | X           | =0001= |      1 |
-|    2 | XXXX        | =0100= |      4 |
-|    3 | XXXXXXX     | =0111= |      7 |
-|      | *pile-sum:* | =0010= |      2 |
-
-- In the example above, the right-most column has a 1, then a 0, another 1. There are an even number of 1s (two of them), so we write =0= at the bottom of the column.
-- The next column (third from the left) has only one =1= in it; an odd number. We write a =1= at the bottom of that column.
-- The resulting 4-bit number (0010 in this example) is called the /pile-sum/.
-
-
-- To win, we want to get the pile-sum to total =0000= after our turn.
-- Looking over the numbers above, it looks like if we took the pile-sum away from the third pile, we'd changing a 7 (=0111= in binary) to a 5 (=0101= in binary). The pile sum would then be =0000=. 
-- On the other player's turn, it now doesn't matter which pile they take from, as long as you reduce the pile sum back to =0000= on your turn.
-- You can now continue this process until you win the game by taking the last stick. 
-- If your opponent knows the strategy and leaves you with a pile sum of =0000=, then you will lose, assuming perfect play on their part.
-** Code It
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: code
-:END:
-- This is a lot of mental calculation. It'd be better if we wrote a program in Python to tell us our moves, so that we can *always* win!
-- To write this program, we'll need to take several steps. 
-   - We need the ability to convert the denary numbers into their binary equivalent. 
-   - This will need to ask for the three numbers and convert them into binary.
-   - We will need to XOR these binary numbers to get the pile sum. 
-   - Finally, we should advise the player of what to do. 
-- Now we've a general plan, let's get started...
-
-- *Step 1:* Make a function to convert denary to binary. A quick Google search tells us that Python has a built-in function to handle this.
+- Suppose two cars are driving towards a junction from perpendicular directions
+- The light is green for one and red for the other
+- If the police would not ticket the drivers, would they want to break the law?
+- To help you understand this scenario and possible outcomes, lets watch a short 4 minutes video:
 #+BEGIN_EXPORT html
-<iframe src="https://trinket.io/embed/python/407337d485" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jILgxeNBK_8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 #+END_EXPORT
 
-- *Step 2:* =XOR= function. Google to the rescue again; Python also has some built-in functions to do the =XOR= operation for us, by using the =bin(a ^ b)= function. 
-- Our code now can be updated to include this new functionality...
-#+BEGIN_EXPORT html
-<iframe src="https://trinket.io/embed/python/fc8c6c1b62" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
-#+END_EXPORT
-- *Step 3:* Once we know this information, we can calculate which pile to remove sticks from, and how many to take. 
-- The Trinket below shows a solution for a 3-pile game. You can use this to complete up to level 4 on the [[http://www.transum.org/Software/Nim/][online Nim game]].
-#+BEGIN_EXPORT html
-<iframe src="https://trinket.io/embed/python/d56d877bbd?start=result" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
-#+END_EXPORT
-** Research It
-:PROPERTIES:
+- =A Nash Equilibrium= is a law that no one would want to break even in the absence of external force such as police in the traffic light example or in the ice cream example
+- Formally, =Nash Equilibrium= is a set of strategies for each player where the optimal outcome of a game is where there is no incentive for any players to change their initial strategy given what other players are doing.
 
-- What is Exclusive Or? 
-- How do we use it in Computer Science?
-
-:HTML_CONTAINER_CLASS: research
-:END:
-- What is Exclusive Or (XOR)? 
-- How do we use it in Computer Science?
 ** Badge It Silver
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: silver
 :END:
-- Write a set of rules for someone who has never played '21' before so that they will always win. You may need to re-read the week 1 notes for this.
-- *OR...*
-- Use the helper program to win Nim level 2 on the [[http://www.transum.org/Software/Nim/][online Nim game]]. Upload a screenshot of the victory screen as evidence.
-** Badge It Gold
+- create a payoff matrix for the following scenario:
+  - Two cars are meeting at an intersection and want to proceed as indicated by the arrows in Figure shown below.
+    [[./img/TwoCars-Crossing.png]]
+ - Each player can proceed or move. If both proceed, there is an accident. A would have a payoff of 100 in this case, and B a payoff of 1000 (since B would be made responsible for the accident, since A has the right of way). If one yields and the other proceeds, the one yielding has a payoff of 5, and the other one of 5. If both yield, it takes a little longer until they can proceed, so both have a payoff of 10.
+ - Analyze this simultaneous game, draw the payoff bimatrix
+** Badge It Silver - Prisoners' dilemma and Nash equilibrium
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: gold
 :END:
-- Write a working two-player game of 21 in Scratch. Upload a screenshot of your code; the week one notes will help.
-- *OR...*
-- Modify the code above, so that you can complete level 5 and level 6 of the [[http://www.transum.org/Software/Nim/][online Nim]] game. Upload a screenshot of the level 6 victory screen as evidence, and a seperate screenshot of your code.
+- Explain Nash equilibrium using payoff matrix and Prisoners' dilemma scenario 
 ** Badge It Platinum
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: platinum
 :END:
-- Implement a one-player version of '21' Nim in Scratch, so that you can play with a computer opponent. You may wish to look back at the last lesson's notes for hints.
-- The computer should randomly choose to play either a 1, 2 or 3. 
-- Implement a strategy that means the computer will always win when it goes first.
+- Conduct some research online and write 200 words on:
+ - What dominant strategy is
+ - Find an example of dominant strategy explain how the dominant strategy works in your example.
+

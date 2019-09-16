@@ -20,6 +20,7 @@
       <li><a href="3_Lesson.html">Week3</a></li>
       <li><a href="4_Lesson.html">Week4</a></li>
       <li><a href="5_Lesson.html">Week5</a></li>
+      <li><a href="homework.html">Homework</a></li>
       <li><a href="evaluation.html">Evaluation</a></li>
     </ul>
   </div>
@@ -103,7 +104,7 @@
   1. Two examples of real life non zero-sum games.
   2. An explanation of why the examples *are* non zero-sum.
 
-** Homework 2
+** COMMENT Homework 2
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
 :END:
@@ -116,7 +117,7 @@ Using the prisoner's dilemma as an example and at least 200 words to explain:
 
 *Your explanation must be related to the example.*
 
-** Homework 3
+** Homework 2
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
 :END:
