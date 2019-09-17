@@ -134,7 +134,7 @@
 - A =Payoff matrix= is a table used to illustrate the player moves and the outcomes with each possible moves.
 
 
-** Learn It - payoff matrix in real life example
+** Learn It - Payoff matrix in real life example
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: try
 :END:
@@ -155,8 +155,7 @@
 #+END_EXPORT
 
 - =A Nash Equilibrium= is a law that no one would want to break even in the absence of external force such as police in the traffic light example or in the ice cream example
-- Formally, =Nash Equilibrium= is a set of strategies for each player where the optimal outcome of a game is where there is no incentive for any players to change their initial strategy given what other players are doing.
-
+- Formally, =Nash Equilibrium= is a state where no players can improve their outcomes by change of strategy as long as others remain unchanged.
 ** Badge It Silver
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: silver
