@@ -107,6 +107,17 @@
 :HTML_CONTAINER_CLASS: save
 :END:
 
+* Objectives
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: objectives
+:END:
+** Developing the *Information Technology* learning strands, specifically:
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
++ Understands and can apply payoff matrix in evaluating outcomes
++ Understands and be able to explain Nash equilibium 
++ Understands and be able to explain dominant strategy
 * Nash Equilibrium and Dominant Strategy
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: activity

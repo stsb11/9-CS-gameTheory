@@ -22,6 +22,7 @@
       <li><a href="3_Lesson.html">Week3</a></li>
       <li><a href="4_Lesson.html">Week4</a></li>
       <li><a href="5_Lesson.html">Week5</a></li>
+ <li><a href="homework.html">Homework</a></li>
       <li><a href="evaluation.html">Evaluation</a></li>
     </ul>
   </div>
