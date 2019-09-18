@@ -179,11 +179,11 @@
 :END:
 *Learning Strand: Programming and Development*
 - Finish the Scratch code so that the game works as intended.
-- Upload a screenshot of the complete and working code for your Silver badge.
+- Upload a screenshot of the complete and working code for your Gold badge.
 ** Badge It - Platinum
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: platinum
 :END:
 *Learning Strand: Algorithms*
 - Change the Scratch code so that when you play against the cat it never betrays you and always let's you off with the best result for you.
-- Upload a screenshot of the complete and working code for your Gold badge.
+- Upload a screenshot of the complete and working code for your Platinum badge.
