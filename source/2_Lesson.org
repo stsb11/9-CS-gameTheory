@@ -6,7 +6,7 @@
 #+OPTIONS: f:nil author:nil num:nil creator:nil timestamp:nil toc:nil html-style:nil
 
 #+TITLE: The Prisoner's Dilemma
-#+AUTHOR: James Brown
+#+AUTHOR: S Brown, X Ellis
 
 
 #+BEGIN_EXPORT html
@@ -136,10 +136,12 @@
 - Imagine that two people have been arrested for a crime, and the police are uncertain which person committed the crime and which person helped carry it out. 
 - Each prisoner is put into a different room and given a choice: 
      - Remain silent
-     - Betray your parter
+     - Betray your parter by confessing
 - If both stay silent, they will both be sent to prison for *1 year*.
 - If they both betray one another, they can both be sent away for *3 years*.
 - If one betrays the other, the betrayer goes *free*, and the other is imprisoned for *5 years*.
+- The situation can illustrated using the following =payoff matrix=:
+[[./img/payoffMatrix-prisoner.png]]
 
 - The lowest total amount of prison time somes from both parties cooperating, /but/ there's always the risk that the other person might not be as kind of you. 
 - This becomes more interesting if we play the game once, then immediately play it again. Each player will now have a knowledge of how the other person behaved last time, and this will influence their decision making process. 
@@ -155,7 +157,13 @@
 - If both companies cooperate (option 1), they'll both enjoy steady profits and won't have to spend thousands of pounds on advertising.
 - If one advertises and the other doesn't, one company will see their sales increase as the other company's sales (and profits) drop. 
 - If both companies advertise, the effects of them both advertising will cancel each other out, and both companies will see their overall profits drop because of the money they're spending on advertising. 
-- In real life, competing companies tend to advertise aggressively. 
+** Badge It - Silver
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: silver
+:END:
+*Learning Strand: Programming and Development*
+- Using Word's table tool, create a =payoff matrix= for the above scenario.
+- Explain why in real life, compaines tend to advertise heavily
 ** Code It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: code
@@ -165,25 +173,17 @@
 - If you've not got one, you can always click 'File -> Download to your computer' when you're finished to ensure your work is saved.
 - Unfortunately, it looks like the developer didn't have time to finish the code, and there are some blanks. 
 - Based on the rules set out above, can you complete the code and make the game work?
-** Badge It - Silver
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: silver
-:END:
-*Learning Strand: Programming and Development*
-- Finish the Scratch code so that the game works as intended.
-- Upload a screenshot of the complete and working code for your Silver badge.
 ** Badge It - Gold
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: gold
 :END:
-*Learning Strand: Algorithms*
-- Change the Scratch code so that when you play against the cat it never betrays you and always let's you off with the best result for you.
-- Upload a screenshot of the complete and working code for your Gold badge.
+*Learning Strand: Programming and Development*
+- Finish the Scratch code so that the game works as intended.
+- Upload a screenshot of the complete and working code for your Silver badge.
 ** Badge It - Platinum
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: platinum
 :END:
-*Learning Strand: Programming and Development*
-- For your Platinum badge you need to make the cat remember your previous move and have it take revenge for that move.
-- For example, if you chose to betray last time then the cat will know this and choose the option that is best for it in that scenario.
-- Upload a screenshot of the complete and working code for your Silver badge.
+*Learning Strand: Algorithms*
+- Change the Scratch code so that when you play against the cat it never betrays you and always let's you off with the best result for you.
+- Upload a screenshot of the complete and working code for your Gold badge.

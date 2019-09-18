@@ -140,7 +140,7 @@
 :END:
 - Considering  two toy companies, A and B.  Their profits depending on their decisions on advertising or not.
 - The =payoff matrix= of their decisions is as following:
-  [[./img/payoff-mtarix-advertising.png/]]
+[[./img/payoff-matrix-advertising.png]]
 
 ** Learn It:  Nash Equilibrium
 :PROPERTIES:
