@@ -162,6 +162,7 @@
 :HTML_CONTAINER_CLASS: silver
 :END:
 *Learning Strand: Programming and Development*
+*** Two companies share a market, in which they currently make £5,000,000 each. Both need to determine whether they should advertise. For each company advertising costs £2,000,000 and captures £3,000,000 from the competitor provided the competitor doesn’t advertise. What should the companies do?
 - Using Word's table tool, create a =payoff matrix= for the above scenario.
 - Explain why in real life, compaines tend to advertise heavily
 ** Code It
